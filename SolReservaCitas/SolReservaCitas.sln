@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAPServices", "SOAPServices\SOAPServices.csproj", "{7D407C76-6287-428C-848A-2FE8B59A35DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAPServicesTest", "SOAPServicesTest\SOAPServicesTest.csproj", "{63532F2D-DE82-41F7-A6A9-3D98B66F3C8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebReservaCitasAfiliado", "WebReservaCitasAfiliado\WebReservaCitasAfiliado.csproj", "{2FF104F2-F74E-48B4-A04F-5E882B3D6A8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D407C76-6287-428C-848A-2FE8B59A35DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D407C76-6287-428C-848A-2FE8B59A35DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D407C76-6287-428C-848A-2FE8B59A35DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D407C76-6287-428C-848A-2FE8B59A35DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63532F2D-DE82-41F7-A6A9-3D98B66F3C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63532F2D-DE82-41F7-A6A9-3D98B66F3C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63532F2D-DE82-41F7-A6A9-3D98B66F3C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63532F2D-DE82-41F7-A6A9-3D98B66F3C8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF104F2-F74E-48B4-A04F-5E882B3D6A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF104F2-F74E-48B4-A04F-5E882B3D6A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF104F2-F74E-48B4-A04F-5E882B3D6A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF104F2-F74E-48B4-A04F-5E882B3D6A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
