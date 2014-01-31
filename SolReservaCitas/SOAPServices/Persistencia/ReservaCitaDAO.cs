@@ -6,7 +6,7 @@ using SOAPServices.Dominio;
 
 namespace SOAPServices.Persistencia
 {
-    public class AfiliadoDAO:BaseDAO<Afiliado,int>
+    public class ReservaCitaDAO:BaseDAO<ReservaCita,int>
     {
     }
 }

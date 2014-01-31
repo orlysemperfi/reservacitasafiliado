@@ -1,1 +1,4 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="SOAPServices.AfiliadoService" CodeBehind="AfiliadoService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" 
+    Debug="true" Service="SOAPServices.AfiliadoService" 
+    CodeBehind="AfiliadoService.svc.cs" 
+    %>

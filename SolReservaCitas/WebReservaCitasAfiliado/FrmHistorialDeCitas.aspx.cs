@@ -32,10 +32,10 @@ namespace WebReservaCitasAfiliado
         }
         protected void btnConsultar_Click(object sender, EventArgs e)
         {
-            WSAfiliado.AfiliadoClient proxyAfiliado = new WSAfiliado.AfiliadoClient();
+            WSReservaCita.ReservaCitaServiceClient proxyReservaCita = new WSReservaCita.ReservaCitaServiceClient();
 
-            List<WSAfiliado.Afiliado> LstAfiliado = proxyAfiliado.ListarAfiliado().ToList();
-            grdListado.DataSource = LstAfiliado;
+            List<WSReservaCita.ReservaCita> LstReservas = proxyReservaCita.ListarReservaCita().ToList();
+            grdListado.DataSource = LstReservas;
             grdListado.DataBind();
         }
 

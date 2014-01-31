@@ -243,6 +243,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\WSReservaCita\ReservaCitaService.disco" />
+    <Content Include="Service References\WSReservaCita\configuration91.svcinfo" />
+    <Content Include="Service References\WSReservaCita\configuration.svcinfo" />
+    <Content Include="Service References\WSReservaCita\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -328,6 +335,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\WSReservaCita\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -357,6 +369,19 @@
     <Content Include="Service References\WSAfiliado\WebReservaCitasAfiliado.WSAfiliado.Afiliado.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\WSReservaCita\ReservaCitaService.wsdl" />
+    <None Include="Service References\WSReservaCita\ReservaCitaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSReservaCita\ReservaCitaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSReservaCita\ReservaCitaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WSReservaCita\WebReservaCitasAfiliado.WSReservaCita.ReservaCita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -369,6 +394,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WSAfiliado\" />
+    <WCFMetadataStorage Include="Service References\WSReservaCita\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

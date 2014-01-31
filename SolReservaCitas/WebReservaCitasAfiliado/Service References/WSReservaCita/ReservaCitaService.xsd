@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" />
+  <xs:element name="CrearReservaCita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
+        <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+        <xs:element minOccurs="0" name="idCentro" type="xs:int" />
+        <xs:element minOccurs="0" name="idMedico" type="xs:int" />
+        <xs:element minOccurs="0" name="idConsultorio" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaAsignacion" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="observacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearReservaCitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="CrearReservaCitaResult" nillable="true" type="q1:ReservaCita" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerReservaCita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerReservaCitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="ObtenerReservaCitaResult" nillable="true" type="q2:ReservaCita" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarReservaCita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
+        <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+        <xs:element minOccurs="0" name="idCentro" type="xs:int" />
+        <xs:element minOccurs="0" name="idMedico" type="xs:int" />
+        <xs:element minOccurs="0" name="idConsultorio" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaAsignacion" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="observacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarReservaCitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="ModificarReservaCitaResult" nillable="true" type="q3:ReservaCita" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarReservaCita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarReservaCitaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarReservaCita">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarReservaCitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="ListarReservaCitaResult" nillable="true" type="q4:ArrayOfReservaCita" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

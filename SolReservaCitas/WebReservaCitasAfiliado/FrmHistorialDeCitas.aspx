@@ -127,16 +127,16 @@
         </tr>
         <tr>
           <td colspan="5" class="auto-style14">
-                <asp:GridView ID="grdListado" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CaptionAlign="Top" CellPadding="3" Font-Names="Arial" Font-Size="Small" GridLines="Vertical" Width="734px" DataKeyNames="IdAfiliado">
+                <asp:GridView ID="grdListado" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CaptionAlign="Top" CellPadding="3" Font-Names="Arial" Font-Size="Small" GridLines="Vertical" Width="734px" DataKeyNames="IdReservaCita">
                     <AlternatingRowStyle BackColor="Gainsboro" />
                     <Columns>
-                        <asp:BoundField HeaderText="Fecha" ReadOnly="True" />
-                        <asp:BoundField HeaderText="Nro.Cita" ReadOnly="True" DataField="IdAfiliado" />
-                        <asp:BoundField HeaderText="Centro" ReadOnly="True" />
-                        <asp:BoundField HeaderText="Medico" ReadOnly="True" />
-                        <asp:BoundField HeaderText="Consultorio" ReadOnly="True" />
-                        <asp:BoundField HeaderText="Observacion" ReadOnly="True" />
-                        <asp:BoundField HeaderText="Estado" ReadOnly="True" />
+                        <asp:BoundField HeaderText="Fecha" ReadOnly="True" DataField="FechaAsignada" />
+                        <asp:BoundField HeaderText="Nro.Cita" ReadOnly="True" DataField="IdReservaCita" />
+                        <asp:BoundField HeaderText="Centro" ReadOnly="True" DataFormatString="IdCentroAtencion" />
+                        <asp:BoundField HeaderText="Medico" ReadOnly="True" DataField="IdMedico" />
+                        <asp:BoundField HeaderText="Consultorio" ReadOnly="True" DataField="IdConsultorio" />
+                        <asp:BoundField HeaderText="Observacion" ReadOnly="True" DataField="Observacion" />
+                        <asp:BoundField HeaderText="Estado" ReadOnly="True" DataField="Estado" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
