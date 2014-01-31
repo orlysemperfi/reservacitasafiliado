@@ -189,6 +189,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="FrmHistorialDeCitas.aspx" />
     <Content Include="FrmMantenimientoDeAfiliado.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -303,6 +304,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHistorialDeCitas.aspx.cs">
+      <DependentUpon>FrmHistorialDeCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmHistorialDeCitas.aspx.designer.cs">
+      <DependentUpon>FrmHistorialDeCitas.aspx</DependentUpon>
     </Compile>
     <Compile Include="FrmMantenimientoDeAfiliado.aspx.cs">
       <DependentUpon>FrmMantenimientoDeAfiliado.aspx</DependentUpon>
