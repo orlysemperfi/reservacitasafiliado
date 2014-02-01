@@ -191,6 +191,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="FrmHistorialDeCitas.aspx" />
     <Content Include="FrmMantenimientoDeAfiliado.aspx" />
+    <Content Include="FrmReservaCita.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -325,6 +326,13 @@
     </Compile>
     <Compile Include="FrmMantenimientoDeAfiliado.aspx.designer.cs">
       <DependentUpon>FrmMantenimientoDeAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReservaCita.aspx.cs">
+      <DependentUpon>FrmReservaCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmReservaCita.aspx.designer.cs">
+      <DependentUpon>FrmReservaCita.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
