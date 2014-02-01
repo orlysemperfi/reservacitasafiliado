@@ -88,5 +88,17 @@ namespace SOAPServicesTest
 
             Assert.IsNotNull(LstAfiliado);
         }
+
+        [TestMethod]
+        public void TestValidarDNIExistente()
+        {
+            AfiliadoProxy.AfiliadoClient afiliadoProxy = new AfiliadoProxy.AfiliadoClient();
+
+            string dni = "44634947";
+            string resultadovalidacion = afiliadoProxy.ValidarDNIExistente(dni);
+
+
+            Assert.AreEqual("SI",resultadovalidacion);
+        }
     }
 }
