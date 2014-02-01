@@ -30,6 +30,11 @@ namespace SOAPServices.Interface
         List<Afiliado> ListarAfiliado();
 
 
+        //Validaciones
+        [OperationContract]
+        string ValidarDNIExistente(string dni);
+
+
     }
 
 }
