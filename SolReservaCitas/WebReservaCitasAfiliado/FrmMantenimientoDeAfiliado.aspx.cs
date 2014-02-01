@@ -31,6 +31,14 @@ namespace WebReservaCitasAfiliado
 
             try
             {
+                //Validando si el DNI ya existe
+                string resultadovalidacion =proxyAfiliado.ValidarDNIExistente(dni);
+                if (resultadovalidacion.Equals("SI"))
+                {
+                    lblMensaje.Text = "El DNI ya ha sido registrado.!";
+                    lblMensaje.Visible = true;
+                    return;
+                }
                 //Grabo el afiliado en la Base De Datos
                 WSAfiliado.Afiliado afi = proxyAfiliado.CrearAfiliado(dni, nombre, apepaterno, apematerno, direccion, fechaNacimiento, estado);
                 //Limpio los Controles
@@ -62,6 +70,7 @@ namespace WebReservaCitasAfiliado
             txtApeMaterno.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             rdbLstEstado.SelectedValue = "1";
+            lblMensaje.Visible = false;
         }
 
         protected void GvAfiliados_SelectedIndexChanged(object sender, EventArgs e)
