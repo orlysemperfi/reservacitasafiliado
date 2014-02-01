@@ -79,5 +79,11 @@ namespace SOAPServices
             Afiliado afiliadoExistente = new Afiliado();
             return AfiliadoDAO.ListarTodos().ToList();
         }
+
+        public string ValidarDNIExistente(string dni)
+        {
+            Afiliado afiliadoExistente = new Afiliado();
+            return AfiliadoDAO.ValidarDNIExistente(dni);
+        }
     }
 }
