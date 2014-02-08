@@ -41,7 +41,7 @@ namespace RESTServices.Persistencia
                                 NombreMedico = (string)resultado["NombreMedico"],
                                 IdConsultorio = (int)resultado["IdConsultorio"],
                                 DescripcionConsultorio = (string)resultado["DescripcionConsultorio"],
-                                FechaAsignada = (DateTime)resultado["FechaAsiganada"],
+                                FechaAsignada = (DateTime)resultado["FechaAsignada"],
                                 Observacion = (string)resultado["Observacion"],
                                 Estado = (int)resultado["Estado"]
                             };
