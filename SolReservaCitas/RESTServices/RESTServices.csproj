@@ -59,6 +59,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Implementacion\HistorialReservasService.svc" />
     <Content Include="Service References\WSAfiliado\AfiliadoService.disco" />
     <Content Include="Service References\WSAfiliado\configuration91.svcinfo" />
     <Content Include="Service References\WSAfiliado\configuration.svcinfo" />
@@ -66,26 +67,26 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Service1.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\HistorialReservas.cs" />
+    <Compile Include="Implementacion\HistorialReservasService.svc.cs">
+      <DependentUpon>HistorialReservasService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Implementacion\IHistorialReservasService.cs" />
+    <Compile Include="Persistencia\ConexionUtil.cs" />
+    <Compile Include="Persistencia\HistorialReserva.cs" />
+    <Compile Include="Persistencia\HistorialReservasDAO.cs" />
     <Compile Include="Service References\WSAfiliado\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Dominio\" />
-    <Folder Include="Implementacion\" />
-    <Folder Include="Persistencia\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service References\WSAfiliado\AfiliadoService.wsdl" />
@@ -125,9 +126,9 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>5001</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:14645/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
