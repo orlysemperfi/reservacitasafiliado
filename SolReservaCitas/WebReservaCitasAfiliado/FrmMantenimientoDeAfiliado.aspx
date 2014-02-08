@@ -29,7 +29,7 @@
                 <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
             </td>
             <td class="auto-style3">
-                <asp:Button ID="btnBuscarAfiliado" runat="server" Text="Buscar en Reniec" />
+                <asp:Button ID="btnBuscarAfiliado" runat="server" Text="Buscar en Reniec" OnClick="btnBuscarAfiliado_Click" />
             </td>
             <td class="auto-style3">
                 &nbsp;</td>

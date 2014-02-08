@@ -143,5 +143,10 @@ namespace WebReservaCitasAfiliado
                 LimpiarControles();
         }
 
+        protected void btnBuscarAfiliado_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -37,6 +37,12 @@
   <wsdl:message name="IAfiliado_ListarAfiliado_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarAfiliadoResponse" />
   </wsdl:message>
+  <wsdl:message name="IAfiliado_ValidarDNIExistente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarDNIExistente" />
+  </wsdl:message>
+  <wsdl:message name="IAfiliado_ValidarDNIExistente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarDNIExistenteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAfiliado">
     <wsdl:operation name="CrearAfiliado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/CrearAfiliado" message="tns:IAfiliado_CrearAfiliado_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="ListarAfiliado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/ListarAfiliado" message="tns:IAfiliado_ListarAfiliado_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAfiliado/ListarAfiliadoResponse" message="tns:IAfiliado_ListarAfiliado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDNIExistente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/ValidarDNIExistente" message="tns:IAfiliado_ValidarDNIExistente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfiliado/ValidarDNIExistenteResponse" message="tns:IAfiliado_ValidarDNIExistente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAfiliado" type="tns:IAfiliado">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarAfiliado">
       <soap:operation soapAction="http://tempuri.org/IAfiliado/ListarAfiliado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDNIExistente">
+      <soap:operation soapAction="http://tempuri.org/IAfiliado/ValidarDNIExistente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
