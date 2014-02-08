@@ -3,6 +3,9 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Web.Script.Serialization;
+using System.Net;
+using System.IO;
 
 namespace SOAPServicesTest
 {
@@ -17,7 +20,7 @@ namespace SOAPServicesTest
         public void TestCrear()
         {
             AfiliadoProxy.AfiliadoClient afiliadoProxy = new AfiliadoProxy.AfiliadoClient();
-            string dni = "44634946";
+            string dni = "44634941";
             string nombre= "Fernando";
             string apepaterno = "Llanos";
             string apematerno = "Rosero";
@@ -49,21 +52,36 @@ namespace SOAPServicesTest
         [TestMethod]
         public void TestModificar()
         {
-            AfiliadoProxy.AfiliadoClient afiliadoProxy = new AfiliadoProxy.AfiliadoClient();
-            int idAfiliado = 3;
-            string dni = "44634946";
-            string nombre = "Carlos";
-            string apepaterno = "Llanos";
-            string apematerno = "Rosero";
-            string direccion = "Lima";
-            DateTime fechaNacimiento = DateTime.Now;
-            int estado = 1;
+            try
+            {
+
+                AfiliadoProxy.AfiliadoClient afiliadoProxy = new AfiliadoProxy.AfiliadoClient();
+                int idAfiliado = 3;
+                string dni = "44634946";
+                string nombre = "Carlos";
+                string apepaterno = "Llanos";
+                string apematerno = "Rosero";
+                string direccion = "Lima";
+                DateTime fechaNacimiento = DateTime.Now;
+                int estado = 1;
 
 
-            AfiliadoProxy.Afiliado afi = afiliadoProxy.ModificarAfiliado(idAfiliado,dni, nombre, apepaterno, apematerno, direccion, fechaNacimiento, estado);
+                AfiliadoProxy.Afiliado afi = afiliadoProxy.ModificarAfiliado(idAfiliado, dni, nombre, apepaterno, apematerno, direccion, fechaNacimiento, estado);
 
 
-            Assert.IsNotNull(afi);
+                Assert.IsNotNull(afi);
+            }
+            catch (WebException e)
+            {
+                HttpWebResponse resError = (HttpWebResponse)e.Response;
+                StreamReader reader2 = new StreamReader(resError.GetResponseStream());
+                string error = reader2.ReadToEnd();
+                JavaScriptSerializer js2 = new JavaScriptSerializer();
+                Error errorMessage = js2.Deserialize<Error>(error);
+                Assert.AreEqual("Afiliado ya existe.", errorMessage.MensajeNegocio);
+
+
+            }
         }
 
         [TestMethod]
@@ -94,7 +112,7 @@ namespace SOAPServicesTest
         {
             AfiliadoProxy.AfiliadoClient afiliadoProxy = new AfiliadoProxy.AfiliadoClient();
 
-            string dni = "44634947";
+            string dni = "44634946";
             string resultadovalidacion = afiliadoProxy.ValidarDNIExistente(dni);
 
 
