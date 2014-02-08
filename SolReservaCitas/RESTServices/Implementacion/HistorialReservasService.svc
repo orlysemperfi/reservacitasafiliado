@@ -1,1 +1,6 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="RESTServices.Implementacion.HistorialReservasService" CodeBehind="HistorialReservasService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" 
+    Debug="true" 
+    Service="RESTServices.Implementacion.HistorialReservasService" 
+    CodeBehind="HistorialReservasService.svc.cs" 
+    Factory = "System.ServiceModel.Activation.WebServiceHostFactory"
+    %>
