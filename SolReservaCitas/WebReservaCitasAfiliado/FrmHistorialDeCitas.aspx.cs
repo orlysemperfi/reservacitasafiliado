@@ -32,15 +32,15 @@ namespace WebReservaCitasAfiliado
             grdListado.DataSource = null;
             grdListado.DataBind();
         }
-        protected void btnConsultar_Click(object sender, EventArgs e)
-        {
+     //   protected void btnConsultar_Click(object sender, EventArgs e)
+      //  {
                          
-            WSReservaCita.ReservaCitaServiceClient proxyReservaCita = new WSReservaCita.ReservaCitaServiceClient();
-            List<WSReservaCita.ReservaCita> LstReservas = proxyReservaCita.ListarReservaCita().ToList();
-            grdListado.DataSource = LstReservas;
-            grdListado.DataBind();
+      //      WSReservaCita.ReservaCitaServiceClient proxyReservaCita = new WSReservaCita.ReservaCitaServiceClient();
+        //    List<WSReservaCita.ReservaCita> LstReservas = proxyReservaCita.ListarReservaCita().ToList();
+       //     grdListado.DataSource = LstReservas;
+       //     grdListado.DataBind();
             
-        }
+      //  }
         protected void btnListar_Click(object sender, EventArgs e)
         {
             HttpWebRequest req2 = (HttpWebRequest)WebRequest.Create("http://localhost:5001/Implementacion/HistorialReservasService.svc/Historial");
