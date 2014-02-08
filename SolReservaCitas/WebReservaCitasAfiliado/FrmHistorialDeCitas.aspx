@@ -118,7 +118,7 @@
         <tr>
             <td class="auto-style12"></td>
             <td class="auto-style13">
-                <asp:Button ID="btnConsultar" runat="server" OnClick="btnConsultar_Click" Text="Consultar" Width="178px" />
+                <asp:Button ID="btnConsultar" runat="server" OnClick="btnConsulta_Click" Text="Consultar" Width="178px" />
             </td>
             <td colspan="2" class="auto-style14">
                 <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" Width="145px" />
