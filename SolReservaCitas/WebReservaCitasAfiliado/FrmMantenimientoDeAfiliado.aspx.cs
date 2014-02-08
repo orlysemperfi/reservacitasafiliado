@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -32,13 +34,13 @@ namespace WebReservaCitasAfiliado
             try
             {
                 //Validando si el DNI ya existe
-                string resultadovalidacion =proxyAfiliado.ValidarDNIExistente(dni);
-                if (resultadovalidacion.Equals("SI"))
-                {
-                    lblMensaje.Text = "El DNI ya ha sido registrado.!";
-                    lblMensaje.Visible = true;
-                    return;
-                }
+                //string resultadovalidacion =proxyAfiliado.ValidarDNIExistente(dni);
+                //if (resultadovalidacion.Equals("SI"))
+                //{
+                //    lblMensaje.Text = "El DNI ya ha sido registrado.!";
+                //    lblMensaje.Visible = true;
+                //    return;
+                //}
                 //Grabo el afiliado en la Base De Datos
                 WSAfiliado.Afiliado afi = proxyAfiliado.CrearAfiliado(dni, nombre, apepaterno, apematerno, direccion, fechaNacimiento, estado);
                 //Limpio los Controles
@@ -46,9 +48,14 @@ namespace WebReservaCitasAfiliado
                 //Listo todos los afiliados en la grila incluyendo el nuevo registro.
                 ListarTodosAfiliados();
             }
-            catch(Exception ex)
+            catch (WebException ex)
             {
-                
+                //Validando si el DNI ya existe
+                HttpWebResponse resError = (HttpWebResponse)ex.Response;
+                StreamReader reader2 = new StreamReader(resError.GetResponseStream());
+                string error = reader2.ReadToEnd();
+                lblMensaje.Text = error;
+
             }
             
         }
