@@ -118,7 +118,7 @@
         <tr>
             <td class="auto-style12"></td>
             <td class="auto-style13">
-                <asp:Button ID="btnConsultar" runat="server" OnClick="btnConsulta_Click" Text="Consultar" Width="178px" />
+                <asp:Button ID="btnConsultar" runat="server" OnClick="btnListar_Click" Text="Consultar" Width="178px" />
             </td>
             <td colspan="2" class="auto-style14">
                 <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" Width="145px" />
@@ -132,9 +132,9 @@
                     <Columns>
                         <asp:BoundField HeaderText="Fecha" ReadOnly="True" DataField="FechaAsignada" />
                         <asp:BoundField HeaderText="Nro.Cita" ReadOnly="True" DataField="IdReservaCita" />
-                        <asp:BoundField HeaderText="Centro" ReadOnly="True" DataField="IdCentroAtencion" />
-                        <asp:BoundField HeaderText="Medico" ReadOnly="True" DataField="IdMedico" />
-                        <asp:BoundField HeaderText="Consultorio" ReadOnly="True" DataField="IdConsultorio" />
+                        <asp:BoundField HeaderText="Centro" ReadOnly="True" DataField="DescripcionCentro" />
+                        <asp:BoundField HeaderText="Medico" ReadOnly="True" DataField="NombreMedico" />
+                        <asp:BoundField HeaderText="Consultorio" ReadOnly="True" DataField="DescripcionConsultorio" />
                         <asp:BoundField HeaderText="Observacion" ReadOnly="True" DataField="Observacion" />
                         <asp:BoundField HeaderText="Estado" ReadOnly="True" DataField="Estado" />
                     </Columns>
