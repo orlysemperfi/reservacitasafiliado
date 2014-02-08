@@ -59,10 +59,22 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Service References\WSAfiliado\AfiliadoService.disco" />
+    <Content Include="Service References\WSAfiliado\configuration91.svcinfo" />
+    <Content Include="Service References\WSAfiliado\configuration.svcinfo" />
+    <Content Include="Service References\WSAfiliado\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Service References\WSAfiliado\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -71,14 +83,36 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Dominio\" />
+    <Folder Include="Implementacion\" />
+    <Folder Include="Persistencia\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Service References\WSAfiliado\AfiliadoService.wsdl" />
+    <None Include="Service References\WSAfiliado\AfiliadoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSAfiliado\AfiliadoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSAfiliado\AfiliadoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WSAfiliado\RESTServices.WSAfiliado.Afiliado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WSAfiliado\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

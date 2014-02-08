@@ -40,7 +40,7 @@ namespace SOAPServices.Implementacion
         public ReservaCita ModificarReservaCita(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, DateTime fechaAsignacion, string observacion, int estado)
         {
             return null;
-
+            
         }
 
         public void EliminarReservaCita(int idReserva)

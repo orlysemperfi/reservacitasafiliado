@@ -132,7 +132,7 @@
                     <Columns>
                         <asp:BoundField HeaderText="Fecha" ReadOnly="True" DataField="FechaAsignada" />
                         <asp:BoundField HeaderText="Nro.Cita" ReadOnly="True" DataField="IdReservaCita" />
-                        <asp:BoundField HeaderText="Centro" ReadOnly="True" DataFormatString="IdCentroAtencion" />
+                        <asp:BoundField HeaderText="Centro" ReadOnly="True" DataField="IdCentroAtencion" />
                         <asp:BoundField HeaderText="Medico" ReadOnly="True" DataField="IdMedico" />
                         <asp:BoundField HeaderText="Consultorio" ReadOnly="True" DataField="IdConsultorio" />
                         <asp:BoundField HeaderText="Observacion" ReadOnly="True" DataField="Observacion" />

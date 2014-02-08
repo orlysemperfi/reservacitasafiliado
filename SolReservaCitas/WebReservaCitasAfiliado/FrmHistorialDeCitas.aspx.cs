@@ -32,11 +32,15 @@ namespace WebReservaCitasAfiliado
         }
         protected void btnConsultar_Click(object sender, EventArgs e)
         {
+          
+                
             WSReservaCita.ReservaCitaServiceClient proxyReservaCita = new WSReservaCita.ReservaCitaServiceClient();
-
             List<WSReservaCita.ReservaCita> LstReservas = proxyReservaCita.ListarReservaCita().ToList();
             grdListado.DataSource = LstReservas;
             grdListado.DataBind();
+            
+           
+
         }
 
     }

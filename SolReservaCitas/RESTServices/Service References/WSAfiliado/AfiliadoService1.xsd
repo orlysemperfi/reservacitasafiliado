@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" />
+  <xs:element name="CrearAfiliado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apepaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apematerno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="estado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearAfiliadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="CrearAfiliadoResult" nillable="true" type="q1:Afiliado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAfiliado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAfiliadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="ObtenerAfiliadoResult" nillable="true" type="q2:Afiliado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarAfiliado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apepaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apematerno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="estado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarAfiliadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="ModificarAfiliadoResult" nillable="true" type="q3:Afiliado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAfiliado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAfiliadoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAfiliado">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAfiliadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="ListarAfiliadoResult" nillable="true" type="q4:ArrayOfAfiliado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarDNIExistente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarDNIExistenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidarDNIExistenteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
