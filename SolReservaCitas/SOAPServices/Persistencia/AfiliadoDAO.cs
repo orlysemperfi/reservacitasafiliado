@@ -18,5 +18,22 @@ namespace SOAPServices.Persistencia
             da.Fill(dt);
             return dt.Rows[0][0].ToString();
         }
+
+        public string ValidarDNIExistenteReniec(string dni)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("Usp_ValidadDNIExistenteReniec " + dni, cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt.Rows[0][0].ToString();
+        }
+
+        public DataSet ObtenerDatosReniec(string dni)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("Select * From Reniec Where dni='" + dni + "'", cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+        
     }
 }
