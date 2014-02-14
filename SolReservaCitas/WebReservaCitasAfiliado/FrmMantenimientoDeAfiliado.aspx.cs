@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.ServiceModel;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -33,28 +35,18 @@ namespace WebReservaCitasAfiliado
 
             try
             {
-                //Validando si el DNI ya existe
-                //string resultadovalidacion =proxyAfiliado.ValidarDNIExistente(dni);
-                //if (resultadovalidacion.Equals("SI"))
-                //{
-                //    lblMensaje.Text = "El DNI ya ha sido registrado.!";
-                //    lblMensaje.Visible = true;
-                //    return;
-                //}
-                //Grabo el afiliado en la Base De Datos
                 WSAfiliado.Afiliado afi = proxyAfiliado.CrearAfiliado(dni, nombre, apepaterno, apematerno, direccion, fechaNacimiento, estado);
                 //Limpio los Controles
                 LimpiarControles();
                 //Listo todos los afiliados en la grila incluyendo el nuevo registro.
                 ListarTodosAfiliados();
+
             }
-            catch (WebException ex)
+            catch (FaultException<WSAfiliado.Error> ex)
             {
                 //Validando si el DNI ya existe
-                HttpWebResponse resError = (HttpWebResponse)ex.Response;
-                StreamReader reader2 = new StreamReader(resError.GetResponseStream());
-                string error = reader2.ReadToEnd();
-                lblMensaje.Text = error;
+                lblMensaje.Visible = true;
+                lblMensaje.Text = ex.Detail.MensajeNegocio;
 
             }
             
@@ -152,7 +144,31 @@ namespace WebReservaCitasAfiliado
 
         protected void btnBuscarAfiliado_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                WSAfiliado.AfiliadoClient proxyAfiliado = new WSAfiliado.AfiliadoClient();
+                string existe = proxyAfiliado.ValidarDNIExistenteReniec(txtDNI.Text);
+                if (existe.Equals("SI"))
+                {
+                    DataSet ds = new DataSet();
+                    ds = proxyAfiliado.ObtenerDatosReniec(txtDNI.Text);
+                    txtNombre.Text = ds.Tables[0].Rows[0][2].ToString();
+                    txtApePaterno.Text = ds.Tables[0].Rows[0][3].ToString();
+                    txtApeMaterno.Text = ds.Tables[0].Rows[0][4].ToString();
+                    txtDireccion.Text = ds.Tables[0].Rows[0][5].ToString();
+                    CaFechaNacimiento.SelectedDate = Convert.ToDateTime(ds.Tables[0].Rows[0][6]);
+                    lblMensaje.Visible = false;
+                }
+                
+                
+            }
+            catch (FaultException<WSAfiliado.Error> ex)
+            {
+                LimpiarControles();
+                lblMensaje.Visible = true;
+                lblMensaje.Text = ex.Detail.MensajeNegocio;
+                
+            }
         }
 
     }
