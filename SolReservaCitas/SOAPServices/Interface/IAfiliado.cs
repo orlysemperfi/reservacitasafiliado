@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using SOAPServices.Dominio;
+using System.Data;
 
 namespace SOAPServices.Interface
 {
@@ -15,6 +16,7 @@ namespace SOAPServices.Interface
     {
 
         [OperationContract]
+        [FaultContract(typeof(Error))]
         Afiliado CrearAfiliado(string dni,string nombre,string apepaterno,string apematerno,string direccion,DateTime fechaNacimiento,int estado);
 
         [OperationContract]
@@ -34,6 +36,13 @@ namespace SOAPServices.Interface
         [OperationContract]
         string ValidarDNIExistente(string dni);
 
+        [OperationContract]
+        [FaultContract(typeof(Error))]
+        string ValidarDNIExistenteReniec(string dni);
+
+        //Obtener Datos de Reniec
+        [OperationContract]
+        DataSet ObtenerDatosReniec(string dni);
 
     }
 
