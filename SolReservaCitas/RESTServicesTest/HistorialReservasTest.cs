@@ -15,7 +15,7 @@ namespace RESTServicesTest
         [TestMethod]
         public void TestListar()
         {
-            HttpWebRequest req2 = (HttpWebRequest)WebRequest.Create("http://localhost:5001/Implementacion/HistorialReservasService.svc/Historial");
+            HttpWebRequest req2 = (HttpWebRequest)WebRequest.Create("http://localhost:5001/Implementacion/HistorialReservasService.svc/Historias");
             req2.Method = "GET";
             HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
             StreamReader reader2 = new StreamReader(res2.GetResponseStream());
