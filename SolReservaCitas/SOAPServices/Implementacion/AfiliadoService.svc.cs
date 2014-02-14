@@ -8,6 +8,8 @@ using System.Text;
 using SOAPServices.Persistencia;
 using SOAPServices.Dominio;
 using SOAPServices.Interface;
+using System.Net;
+using System.Data;
 
 namespace SOAPServices
 {
@@ -28,19 +30,28 @@ namespace SOAPServices
 
         public Afiliado CrearAfiliado(string dni, string nombre, string apepaterno, string apematerno, string direccion, DateTime fechaNacimiento, int estado)
         {
-            SOAPServices.Dominio.Afiliado afiliadoACrear = new SOAPServices.Dominio.Afiliado()
+            
+            string existe = ValidarDNIExistente(dni);
+            if (existe.Equals("SI"))
             {
-                DNI = dni,
-                Nombre = nombre,
-                ApePaterno = apematerno,
-                ApeMaterno = apematerno,
-                Direccion = direccion,
-                FechaNacimiento = fechaNacimiento,
-                Estado = estado
+                Error error = new Error {CodigoNegocio = "E01", MensajeNegocio = "Ya esta registrado."};
+                throw new FaultException<Error>(error);
+            }
 
-            };
+                SOAPServices.Dominio.Afiliado afiliadoACrear = new SOAPServices.Dominio.Afiliado()
+                {
+                    DNI = dni,
+                    Nombre = nombre,
+                    ApePaterno = apematerno,
+                    ApeMaterno = apematerno,
+                    Direccion = direccion,
+                    FechaNacimiento = fechaNacimiento,
+                    Estado = estado
 
-            return AfiliadoDAO.Crear(afiliadoACrear);
+                };
+
+                return AfiliadoDAO.Crear(afiliadoACrear);
+
         }
 
         public Afiliado ObtenerAfiliado(int idAfiliado)
@@ -84,6 +95,29 @@ namespace SOAPServices
         {
             Afiliado afiliadoExistente = new Afiliado();
             return AfiliadoDAO.ValidarDNIExistente(dni);
+        }
+
+        public string ValidarDNIExistenteReniec(string dni)
+        {
+            string existe = AfiliadoDAO.ValidarDNIExistenteReniec(dni);
+            if (existe.Equals("NO"))
+            {
+                Error error = new Error { CodigoNegocio = "E02", MensajeNegocio = "El DNI no existe en Reniec." };
+                throw new FaultException<Error>(error);
+            }
+            return AfiliadoDAO.ValidarDNIExistenteReniec(dni);
+        }
+
+        public DataSet ObtenerDatosReniec(string dni)
+        {
+            try
+            {
+                return AfiliadoDAO.ObtenerDatosReniec(dni);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
