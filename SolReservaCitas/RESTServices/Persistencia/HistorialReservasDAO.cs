@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.ServiceModel.Web;
 using System.Web;
 using RESTServices.Dominio;
 
@@ -9,7 +11,7 @@ namespace RESTServices.Persistencia
 {
     public class HistorialReservasDAO
     {
-        public List<HistorialReservas> ListarTodos()
+        public List<HistorialReservas> ListarTodos(string dni)
         {
             List<HistorialReservas> Listado = new List<HistorialReservas>();
             string sql = "select r.IdReservaCita,r.IdAfiliado,(a.Nombre+' ' +a.APaterno) as NombreAfiliado, "+
@@ -20,12 +22,15 @@ namespace RESTServices.Persistencia
             "from ReservaCita r left outer join Afiliado a on a.IdAfiliado=r.IdAfiliado "+
             "left outer join CentroAtencion ca on ca.IdCentroAtencion=r.IdCentroAtencion "+ 
             "left outer join Medico m on m.IdMedico=r.IdMedico "+
-            "left outer join Consultorio c on c.IdCentroAtencion=r.IdCentroAtencion and c.IdConsultorio=r.IdConsultorio";
+            "left outer join Consultorio c on c.IdCentroAtencion=r.IdCentroAtencion and c.IdConsultorio=r.IdConsultorio"+
+            " where a.DNI=@dni ";
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))
             {
                 con.Open();
                 using (SqlCommand com = new SqlCommand(sql, con))
                 {
+                    com.Parameters.Add(new SqlParameter("@dni", dni));
+
                     using (SqlDataReader resultado = com.ExecuteReader())
                     {
                         while (resultado.Read())
@@ -50,6 +55,7 @@ namespace RESTServices.Persistencia
                     }
                 }
             }
+       
             return Listado;
         }
 

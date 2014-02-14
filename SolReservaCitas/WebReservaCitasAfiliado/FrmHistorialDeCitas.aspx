@@ -31,11 +31,11 @@
         .auto-style10
         {
             height: 49px;
-            width: 17px;
+            width: 44px;
         }
         .auto-style11
         {
-            width: 17px;
+            width: 44px;
         }
         .auto-style12
         {
@@ -44,7 +44,7 @@
         }
         .auto-style13
         {
-            width: 17px;
+            width: 44px;
             height: 48px;
         }
         .auto-style14
@@ -58,11 +58,20 @@
         .auto-style16
         {
             width: 36px;
-            height: 22px;
+            height: 3px;
         }
         .auto-style17
         {
-            height: 22px;
+            height: 3px;
+        }
+        .auto-style18
+        {
+            width: 36px;
+            height: 36px;
+        }
+        .auto-style19
+        {
+            height: 36px;
         }
     </style>
 </asp:Content>
@@ -103,17 +112,16 @@
         <tr>
             <td class="auto-style16"></td>
             <td colspan="3" class="auto-style17">
-                <asp:Label ID="lblMensaje" runat="server" style="font-weight: 700; color: #CC0000" Visible="False"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td class="auto-style9">
+            <td class="auto-style18">
                 <asp:Label ID="Label2" runat="server" style="font-weight: 700" Text="Afiliado"></asp:Label>
             </td>
-            <td colspan="3">
-                <asp:Label ID="lblNombre" runat="server"></asp:Label>
+            <td colspan="3" class="auto-style19">
+                <asp:Label ID="lblNombre" runat="server" Font-Bold="True"></asp:Label>
             </td>
-            <td></td>
+            <td class="auto-style19"></td>
         </tr>
         <tr>
             <td class="auto-style12"></td>
@@ -124,6 +132,13 @@
                 <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" Width="145px" />
             </td>
             <td></td>
+        </tr>
+        <tr>
+            <td class="auto-style12">&nbsp;</td>
+            <td colspan="3" class="auto-style19">
+                <asp:Label ID="lblMensaje" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:Label>
+            </td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
           <td colspan="5" class="auto-style14">

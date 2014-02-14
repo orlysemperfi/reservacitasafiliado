@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="RESTServices.Implementacion.AfiliadoService" CodeBehind="AfiliadoService.svc.cs" %>

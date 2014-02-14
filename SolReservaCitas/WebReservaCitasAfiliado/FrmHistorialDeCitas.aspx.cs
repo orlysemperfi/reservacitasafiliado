@@ -13,7 +13,16 @@ namespace WebReservaCitasAfiliado
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            if (!IsPostBack)
+            {
+                DateTime today = System.DateTime.Today;
+       
+         
+                
+                txtDesde.Text = String.Format("{0:dd/MM/yyyy}", today);
+                txtHasta.Text = String.Format("{0:dd/MM/yyyy}", today);
+            }
         }
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
@@ -43,18 +52,37 @@ namespace WebReservaCitasAfiliado
       //  }
         protected void btnListar_Click(object sender, EventArgs e)
         {
-            HttpWebRequest req2 = (HttpWebRequest)WebRequest.Create("http://localhost:5001/Implementacion/HistorialReservasService.svc/Historias");
-            req2.Method = "GET";
-            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
-            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
-            string clienteJson2 = reader2.ReadToEnd();
-            JavaScriptSerializer js2 = new JavaScriptSerializer();
+            if (!txtDNI.Text.Equals(string.Empty))
+            {
+                HttpWebRequest req2 = (HttpWebRequest)WebRequest.Create("http://localhost:5001/Implementacion/HistorialReservasService.svc/Historias/" + txtDNI.Text);
+                req2.Method = "GET";
+                HttpWebResponse res2 = null;
+                try
+                {
+                    res2 = (HttpWebResponse)req2.GetResponse();
+                    StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+                    string clienteJson2 = reader2.ReadToEnd();
+                    JavaScriptSerializer js2 = new JavaScriptSerializer();
 
-            IList<HistorialReservas> Lista = js2.Deserialize<IList<HistorialReservas>>(clienteJson2);
-            ICollection<HistorialReservas> modelo = Lista;
-            grdListado.DataSource = Lista;
-            grdListado.DataBind();
-            
+                    IList<HistorialReservas> Lista = js2.Deserialize<IList<HistorialReservas>>(clienteJson2);
+                    grdListado.DataSource = Lista;
+                    lblMensaje.Text = string.Empty;
+                    HistorialReservas item = (HistorialReservas)Lista.First();
+                    lblNombre.Text = item.NombreAfiliado;
+                }
+                catch (WebException error)
+                {
+                    HttpWebResponse res1Error = (HttpWebResponse)error.Response;
+                    StreamReader reader3 = new StreamReader(res1Error.GetResponseStream());
+                    string error2 = reader3.ReadToEnd();
+                    JavaScriptSerializer js3 = new JavaScriptSerializer();
+                    string errorMessage = js3.Deserialize<string>(error2);
+                    grdListado.DataSource = null;
+                    lblMensaje.Text = errorMessage;
+                    lblNombre.Text = string.Empty;
+                }
+                grdListado.DataBind();
+            }
         }
 
     }

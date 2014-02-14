@@ -63,24 +63,31 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Implementacion\AfiliadoService.svc" />
     <Content Include="Implementacion\HistorialReservasService.svc" />
-    <Content Include="Service References\WSAfiliado\AfiliadoService.disco" />
-    <Content Include="Service References\WSAfiliado\configuration91.svcinfo" />
-    <Content Include="Service References\WSAfiliado\configuration.svcinfo" />
-    <Content Include="Service References\WSAfiliado\Reference.svcmap">
+    <None Include="Service References\WSAfiliado\AfiliadoService.disco" />
+    <None Include="Service References\WSAfiliado\configuration91.svcinfo" />
+    <None Include="Service References\WSAfiliado\configuration.svcinfo" />
+    <None Include="Service References\WSAfiliado\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Afiliado.cs" />
     <Compile Include="Dominio\HistorialReservas.cs" />
+    <Compile Include="Implementacion\AfiliadoService.svc.cs">
+      <DependentUpon>AfiliadoService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Implementacion\HistorialReservasService.svc.cs">
       <DependentUpon>HistorialReservasService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Implementacion\IAfiliadoService.cs" />
     <Compile Include="Implementacion\IHistorialReservasService.cs" />
+    <Compile Include="Persistencia\AfiliadoDAO.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
     <Compile Include="Persistencia\HistorialReserva.cs" />
     <Compile Include="Persistencia\HistorialReservasDAO.cs" />
@@ -95,7 +102,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service References\WSAfiliado\AfiliadoService.wsdl" />
+    <None Include="Service References\WSAfiliado\AfiliadoService.wsdl" />
     <None Include="Service References\WSAfiliado\AfiliadoService.xsd">
       <SubType>Designer</SubType>
     </None>
