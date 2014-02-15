@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dominio\Afiliado.cs" />
+    <Compile Include="Dominio\Error.cs" />
     <Compile Include="Dominio\ReservaCita.cs" />
     <Compile Include="Implementacion\AfiliadoService.svc.cs">
       <DependentUpon>AfiliadoService.svc</DependentUpon>
