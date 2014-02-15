@@ -28,5 +28,8 @@ namespace SOAPServices.Implementacion
 
         [OperationContract]
         List<ReservaCita> ListarReservaCita();
+        [OperationContract]
+        void RecuperarDeCola();
+
     }
 }

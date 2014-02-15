@@ -66,31 +66,8 @@ namespace SOAPServices.Implementacion
                     }
                     reservaCreada = ReservaDAO.Crear(reservaACrear);
             }
-            catch(Exception)
+            catch
             {
-
-                //Graba en Cola
-                string rutaCola = @".\private$\Reservas";
-                if (MessageQueue.Exists(rutaCola) == false)
-                    MessageQueue.Create(rutaCola);
-                MessageQueue cola = new MessageQueue(rutaCola);
-                Message mensaje = new Message();
-                mensaje.Label = "Nueva Reserva";
-
-                reservaCreada = new ReservaCita
-                {
-                    IdAfiliado = 0,
-                    IdCentroAtencion = idCentro,
-                    IdMedico = idMedico,
-                    IdConsultorio = idConsultorio,
-                    Observacion = observacion,
-                    FechaAsignada = fechaAsignada,
-                    Estado = estado,
-                    DNI=dni
-
-                };
-                mensaje.Body = reservaCreada;
-                cola.Send(mensaje);
 
 
             }
@@ -119,6 +96,50 @@ namespace SOAPServices.Implementacion
         {
             ReservaCita reservaExistente = new ReservaCita();
             return ReservaDAO.ListarTodos().ToList();
+        }
+
+        public void RecuperarDeCola()
+        {
+            string rutaCola = @".\private$\Reservas";
+            if (!MessageQueue.Exists(rutaCola))
+                MessageQueue.Create(rutaCola);
+            MessageQueue cola = new MessageQueue(rutaCola);
+            cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(ReservaCita) });
+            Message[] mensajesenCola = cola.GetAllMessages();
+
+            foreach (Message msg in mensajesenCola)
+            {
+                Message mensaje = msg;
+                mensaje = cola.Receive();
+                ReservaCita reservaACrear = (ReservaCita)mensaje.Body;
+
+                ReservaCita reserva = null;
+                try
+                {
+
+                    reserva = new ReservaCita()
+                    {
+                        IdAfiliado = reservaACrear.IdAfiliado,
+                        IdCentroAtencion = reservaACrear.IdCentroAtencion,
+                        IdMedico = reservaACrear.IdMedico,
+                        IdConsultorio = reservaACrear.IdConsultorio,
+                        Observacion = reservaACrear.Observacion,
+                        FechaAsignada = reservaACrear.FechaAsignada,
+                        Estado = reservaACrear.Estado,
+                        DNI=reservaACrear.DNI
+
+                    };
+                    ReservaCita res = CrearReservaCita(reserva.DNI,reserva.IdCentroAtencion,reserva.IdMedico,reserva.IdConsultorio,reserva.FechaAsignada,reserva.Observacion,reserva.Estado);
+
+                }
+                catch
+                {
+                }
+            }
+
+
+
+
         }
     }
 }

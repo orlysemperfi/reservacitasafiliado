@@ -22,35 +22,6 @@ namespace RESTServices.Implementacion
         public List<HistorialReservas> ListarHistorial(string dni,string desde,string hasta)
         {
 
-            string rutaCola = @".\private$\reservas";
-            if (!MessageQueue.Exists(rutaCola))
-                MessageQueue.Create(rutaCola);
-            MessageQueue cola = new MessageQueue(rutaCola);
-            cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(WSReserva.ReservaCita) });
-            Message[] mensajesenCola = cola.GetAllMessages();
-
-            foreach (Message msg in mensajesenCola)
-            {
-                Message mensaje = msg;
-                mensaje = cola.Receive();
-                WSReserva.ReservaCita reservaACrear = (WSReserva.ReservaCita)mensaje.Body;
-
-                WSReserva.ReservaCita reserva = null;
-                try
-                {
-                        WSReserva.ReservaCitaServiceClient proxyreserva=new WSReserva.ReservaCitaServiceClient();
-                 
-                    reserva = proxyreserva.CrearReservaCita(reservaACrear.DNI,reservaACrear.IdCentroAtencion,reservaACrear.IdMedico,reservaACrear.IdConsultorio,reservaACrear.FechaAsignada,reservaACrear.Observacion,reservaACrear.Estado);
- 
-                }
-                catch
-                {
-                }
-            }
-
-
-
-
              Afiliado afiliadoBuscado = dao1.Obtener(dni);
              List<HistorialReservas> Lista = null;
              if (afiliadoBuscado==null)

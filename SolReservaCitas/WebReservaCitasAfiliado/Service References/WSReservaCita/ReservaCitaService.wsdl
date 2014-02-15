@@ -40,6 +40,12 @@
   <wsdl:message name="IReservaCitaService_ListarReservaCita_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarReservaCitaResponse" />
   </wsdl:message>
+  <wsdl:message name="IReservaCitaService_RecuperarDeCola_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarDeCola" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_RecuperarDeCola_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarDeColaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IReservaCitaService">
     <wsdl:operation name="CrearReservaCita">
       <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/CrearReservaCita" message="tns:IReservaCitaService_CrearReservaCita_InputMessage" />
@@ -61,6 +67,10 @@
     <wsdl:operation name="ListarReservaCita">
       <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/ListarReservaCita" message="tns:IReservaCitaService_ListarReservaCita_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReservaCitaService/ListarReservaCitaResponse" message="tns:IReservaCitaService_ListarReservaCita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarDeCola">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/RecuperarDeCola" message="tns:IReservaCitaService_RecuperarDeCola_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaCitaService/RecuperarDeColaResponse" message="tns:IReservaCitaService_RecuperarDeCola_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IReservaCitaService" type="tns:IReservaCitaService">
@@ -106,6 +116,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarReservaCita">
       <soap:operation soapAction="http://tempuri.org/IReservaCitaService/ListarReservaCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarDeCola">
+      <soap:operation soapAction="http://tempuri.org/IReservaCitaService/RecuperarDeCola" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

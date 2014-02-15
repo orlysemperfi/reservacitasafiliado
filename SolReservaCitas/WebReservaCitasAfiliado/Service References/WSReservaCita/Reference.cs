@@ -220,6 +220,12 @@ namespace WebReservaCitasAfiliado.WSReservaCita {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/ListarReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/ListarReservaCitaResponse")]
         System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita[]> ListarReservaCitaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/RecuperarDeCola", ReplyAction="http://tempuri.org/IReservaCitaService/RecuperarDeColaResponse")]
+        void RecuperarDeCola();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/RecuperarDeCola", ReplyAction="http://tempuri.org/IReservaCitaService/RecuperarDeColaResponse")]
+        System.Threading.Tasks.Task RecuperarDeColaAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -287,6 +293,14 @@ namespace WebReservaCitasAfiliado.WSReservaCita {
         
         public System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita[]> ListarReservaCitaAsync() {
             return base.Channel.ListarReservaCitaAsync();
+        }
+        
+        public void RecuperarDeCola() {
+            base.Channel.RecuperarDeCola();
+        }
+        
+        public System.Threading.Tasks.Task RecuperarDeColaAsync() {
+            return base.Channel.RecuperarDeColaAsync();
         }
     }
 }
