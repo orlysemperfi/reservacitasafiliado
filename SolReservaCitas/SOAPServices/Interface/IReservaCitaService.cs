@@ -14,7 +14,7 @@ namespace SOAPServices.Implementacion
     {
 
         [OperationContract]
-        ReservaCita CrearReservaCita(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio,DateTime fechaAsignacion, string observacion, int estado);
+        ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio,DateTime fechaAsignacion, string observacion, int estado);
 
         [OperationContract]
         ReservaCita ObtenerReservaCita(int idReserva);
