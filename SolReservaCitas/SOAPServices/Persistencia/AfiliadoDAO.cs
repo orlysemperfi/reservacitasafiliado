@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using SOAPServices.Dominio;
+
 using System.Data;
 using System.Data.SqlClient;
+using SOAPServices.Dominio;
 
 namespace SOAPServices.Persistencia
 {
@@ -33,6 +34,37 @@ namespace SOAPServices.Persistencia
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
+        }
+
+        public Afiliado ObtenerAfiliadoPorDNI(string dni)
+        {
+            Afiliado afiliadoEncontrado = null;
+            string sql = "SELECT * FROM Afiliado where DNI=@dni";
+            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
+            {
+                con.Open();
+                using (SqlCommand com = new SqlCommand(sql, con))
+                {
+                    com.Parameters.Add(new SqlParameter("@dni", dni));
+                    using (SqlDataReader resultado = com.ExecuteReader())
+                    {
+                        if (resultado.Read())
+                        {
+                            afiliadoEncontrado = new Afiliado()
+                            {
+                                IdAfiliado = (int)resultado["IdAfiliado"],
+                                DNI = (string)resultado["DNI"],
+                                Nombre = (string)resultado["Nombre"]
+                            };
+
+                        }
+
+                    }
+                }
+
+            }
+            return afiliadoEncontrado;
+       
         }
         
     }
