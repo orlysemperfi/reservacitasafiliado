@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -73,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Service References\AfiliadoProxy\AfiliadoService.wsdl" />
     <None Include="Service References\AfiliadoProxy\AfiliadoService.xsd">
       <SubType>Designer</SubType>
@@ -81,6 +83,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AfiliadoProxy\AfiliadoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AfiliadoProxy\AfiliadoService3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AfiliadoProxy\SOAPServicesTest.AfiliadoProxy.Afiliado.datasource">

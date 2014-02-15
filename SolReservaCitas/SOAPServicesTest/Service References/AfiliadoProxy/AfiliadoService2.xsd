@@ -13,6 +13,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Afiliado" nillable="true" type="tns:Afiliado" />
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoNegocio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MensajeNegocio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Error" nillable="true" type="tns:Error" />
   <xs:complexType name="ArrayOfAfiliado">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Afiliado" nillable="true" type="tns:Afiliado" />

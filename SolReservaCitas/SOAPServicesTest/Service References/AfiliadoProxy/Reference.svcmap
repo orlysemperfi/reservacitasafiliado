@@ -24,6 +24,7 @@
   <Metadata>
     <MetadataFile FileName="AfiliadoService.xsd" MetadataType="Schema" ID="1e23eb65-e519-4e11-aa05-74371ad09cb4" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd1" />
     <MetadataFile FileName="AfiliadoService1.xsd" MetadataType="Schema" ID="28134033-51d0-40f6-9e5b-2daae989cb2e" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AfiliadoService3.xsd" MetadataType="Schema" ID="cf53c5a2-a363-4c25-aa83-c1106b0c115c" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd3" />
     <MetadataFile FileName="AfiliadoService2.xsd" MetadataType="Schema" ID="5dc632d6-3159-4d10-b81b-e2becddb86e4" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd2" />
     <MetadataFile FileName="AfiliadoService.wsdl" MetadataType="Wsdl" ID="189559df-be38-46cb-9fdb-b33f74145184" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/AfiliadoService.svc?wsdl" />
     <MetadataFile FileName="AfiliadoService.disco" MetadataType="Disco" ID="c93a0fdb-4208-43a5-bd57-5bd6603c409b" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/AfiliadoService.svc?disco" />

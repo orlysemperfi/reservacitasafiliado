@@ -170,11 +170,73 @@ namespace SOAPServicesTest.AfiliadoProxy {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Error", Namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio")]
+    [System.SerializableAttribute()]
+    public partial class Error : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoNegocioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MensajeNegocioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CodigoNegocio {
+            get {
+                return this.CodigoNegocioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoNegocioField, value) != true)) {
+                    this.CodigoNegocioField = value;
+                    this.RaisePropertyChanged("CodigoNegocio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MensajeNegocio {
+            get {
+                return this.MensajeNegocioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MensajeNegocioField, value) != true)) {
+                    this.MensajeNegocioField = value;
+                    this.RaisePropertyChanged("MensajeNegocio");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AfiliadoProxy.IAfiliado")]
     public interface IAfiliado {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/CrearAfiliado", ReplyAction="http://tempuri.org/IAfiliado/CrearAfiliadoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SOAPServicesTest.AfiliadoProxy.Error), Action="http://tempuri.org/IAfiliado/CrearAfiliadoErrorFault", Name="Error", Namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio")]
         SOAPServicesTest.AfiliadoProxy.Afiliado CrearAfiliado(string dni, string nombre, string apepaterno, string apematerno, string direccion, System.DateTime fechaNacimiento, int estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/CrearAfiliado", ReplyAction="http://tempuri.org/IAfiliado/CrearAfiliadoResponse")]
@@ -209,6 +271,19 @@ namespace SOAPServicesTest.AfiliadoProxy {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/ValidarDNIExistente", ReplyAction="http://tempuri.org/IAfiliado/ValidarDNIExistenteResponse")]
         System.Threading.Tasks.Task<string> ValidarDNIExistenteAsync(string dni);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniec", ReplyAction="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniecResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SOAPServicesTest.AfiliadoProxy.Error), Action="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniecErrorFault", Name="Error", Namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio")]
+        string ValidarDNIExistenteReniec(string dni);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniec", ReplyAction="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniecResponse")]
+        System.Threading.Tasks.Task<string> ValidarDNIExistenteReniecAsync(string dni);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/ObtenerDatosReniec", ReplyAction="http://tempuri.org/IAfiliado/ObtenerDatosReniecResponse")]
+        System.Data.DataSet ObtenerDatosReniec(string dni);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/ObtenerDatosReniec", ReplyAction="http://tempuri.org/IAfiliado/ObtenerDatosReniecResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ObtenerDatosReniecAsync(string dni);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -284,6 +359,22 @@ namespace SOAPServicesTest.AfiliadoProxy {
         
         public System.Threading.Tasks.Task<string> ValidarDNIExistenteAsync(string dni) {
             return base.Channel.ValidarDNIExistenteAsync(dni);
+        }
+        
+        public string ValidarDNIExistenteReniec(string dni) {
+            return base.Channel.ValidarDNIExistenteReniec(dni);
+        }
+        
+        public System.Threading.Tasks.Task<string> ValidarDNIExistenteReniecAsync(string dni) {
+            return base.Channel.ValidarDNIExistenteReniecAsync(dni);
+        }
+        
+        public System.Data.DataSet ObtenerDatosReniec(string dni) {
+            return base.Channel.ObtenerDatosReniec(dni);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ObtenerDatosReniecAsync(string dni) {
+            return base.Channel.ObtenerDatosReniecAsync(dni);
         }
     }
 }
