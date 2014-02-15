@@ -14,7 +14,7 @@ namespace SOAPServices.Implementacion
     {
 
         [OperationContract]
-        [FaultContract(typeof(Error))]
+        [FaultContract(typeof(string))]
         ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio,DateTime fechaAsignacion, string observacion, int estado);
 
         [OperationContract]

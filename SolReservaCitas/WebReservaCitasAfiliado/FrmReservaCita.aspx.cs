@@ -34,7 +34,7 @@ namespace WebReservaCitasAfiliado
             try
             {
                 WSReservaCita.ReservaCita reserva = proxyReserva.CrearReservaCita(dni, idcentro, idmedico, idconsultorio, (DateTime)fechaAsignada, observacion, estado);
-                //Limpio los Controles
+
                 LimpiarControles();
      
 
@@ -46,6 +46,7 @@ namespace WebReservaCitasAfiliado
                 lblMensaje.Text = ex.Message;
 
             }
+           
         }
 
         protected void BtnActualizarReserva_Click(object sender, EventArgs e)

@@ -39,23 +39,26 @@ namespace SOAPServices.Implementacion
         public ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio, DateTime fechaAsignada, string observacion, int estado)
         {
             Afiliado afiliadoABuscar = AfiliadoDAO.ObtenerAfiliadoPorDNI(dni);
-           
-            if (afiliadoABuscar==null)
+            ReservaCita reservaACrear = null;
+
+            if (afiliadoABuscar == null)
             {
                 throw new FaultException("Afiliado No esta Registrado.");
             }
-
-            ReservaCita reservaACrear = new ReservaCita()
+            else
             {
-                IdAfiliado=afiliadoABuscar.IdAfiliado,
+                reservaACrear = new ReservaCita()
+            {
+                IdAfiliado = afiliadoABuscar.IdAfiliado,
                 IdCentroAtencion = idCentro,
-                IdMedico=idMedico,
+                IdMedico = idMedico,
                 IdConsultorio = idConsultorio,
                 Observacion = observacion,
                 FechaAsignada = fechaAsignada,
                 Estado = estado
 
             };
+            }
 
             return ReservaDAO.Crear(reservaACrear);
         }
