@@ -145,7 +145,7 @@
                 <asp:GridView ID="grdListado" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CaptionAlign="Top" CellPadding="3" Font-Names="Arial" Font-Size="Small" GridLines="Vertical" Width="734px" DataKeyNames="IdReservaCita">
                     <AlternatingRowStyle BackColor="Gainsboro" />
                     <Columns>
-                        <asp:BoundField HeaderText="Fecha" ReadOnly="True" DataField="FechaAsignada" />
+                        <asp:BoundField HeaderText="Fecha" ReadOnly="True" DataField="FechaAsignada" DataFormatString="{0:dd/MM/yyyy}" />
                         <asp:BoundField HeaderText="Nro.Cita" ReadOnly="True" DataField="IdReservaCita" />
                         <asp:BoundField HeaderText="Centro" ReadOnly="True" DataField="DescripcionCentro" />
                         <asp:BoundField HeaderText="Medico" ReadOnly="True" DataField="NombreMedico" />

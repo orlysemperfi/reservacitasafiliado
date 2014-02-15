@@ -54,7 +54,8 @@ namespace WebReservaCitasAfiliado
             if (!txtDNI.Text.Equals(string.Empty) && !txtDesde.Text.Equals(string.Empty) &&
                 !txtHasta.Text.Equals(string.Empty))
             {
-                HttpWebRequest req2 = (HttpWebRequest)WebRequest.Create("http://localhost:5001/Implementacion/HistorialReservasService.svc/Historias/" + txtDNI.Text);
+                HttpWebRequest req2 = (HttpWebRequest)WebRequest
+                    .Create("http://localhost:5001/Implementacion/HistorialReservasService.svc/Historias/" + txtDNI.Text.Trim() + "/" + String.Format("{0:yyyy-MM-dd}", txtDesde.Text) + "/" + String.Format("{0:yyyy-MM-dd}", txtHasta.Text));
                 req2.Method = "GET";
                 HttpWebResponse res2 = null;
                 try
