@@ -49,6 +49,7 @@ namespace SOAPServices.Implementacion
             {
                 IdAfiliado=afiliadoABuscar.IdAfiliado,
                 IdCentroAtencion = idCentro,
+                IdMedico=idMedico,
                 IdConsultorio = idConsultorio,
                 Observacion = observacion,
                 FechaAsignada = fechaAsignada,
