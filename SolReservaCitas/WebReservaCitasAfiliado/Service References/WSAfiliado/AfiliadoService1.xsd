@@ -134,4 +134,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ObtenerAfiliadoPorDNI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAfiliadoPorDNIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" minOccurs="0" name="ObtenerAfiliadoPorDNIResult" nillable="true" type="q5:Afiliado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

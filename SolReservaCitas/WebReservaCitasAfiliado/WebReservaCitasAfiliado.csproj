@@ -294,13 +294,6 @@
     <Content Include="Service References\WSMedico\WebReservaCitasAfiliado.WSMedico.Medico.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSReservaCita\ReservaCitaService.disco" />
-    <None Include="Service References\WSReservaCita\configuration91.svcinfo" />
-    <None Include="Service References\WSReservaCita\configuration.svcinfo" />
-    <None Include="Service References\WSReservaCita\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\WSCentro\CentroService.disco" />
     <None Include="Service References\WSCentro\configuration91.svcinfo" />
     <None Include="Service References\WSCentro\configuration.svcinfo" />
@@ -312,6 +305,13 @@
     <None Include="Service References\WSMedico\configuration91.svcinfo" />
     <None Include="Service References\WSMedico\configuration.svcinfo" />
     <None Include="Service References\WSMedico\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSReservaCita\ReservaCitaService.disco" />
+    <None Include="Service References\WSReservaCita\configuration91.svcinfo" />
+    <None Include="Service References\WSReservaCita\configuration.svcinfo" />
+    <None Include="Service References\WSReservaCita\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -62,6 +62,12 @@
   <wsdl:message name="IAfiliado_ObtenerDatosReniec_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDatosReniecResponse" />
   </wsdl:message>
+  <wsdl:message name="IAfiliado_ObtenerAfiliadoPorDNI_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAfiliadoPorDNI" />
+  </wsdl:message>
+  <wsdl:message name="IAfiliado_ObtenerAfiliadoPorDNI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAfiliadoPorDNIResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAfiliado">
     <wsdl:operation name="CrearAfiliado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/CrearAfiliado" message="tns:IAfiliado_CrearAfiliado_InputMessage" />
@@ -96,6 +102,10 @@
     <wsdl:operation name="ObtenerDatosReniec">
       <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/ObtenerDatosReniec" message="tns:IAfiliado_ObtenerDatosReniec_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAfiliado/ObtenerDatosReniecResponse" message="tns:IAfiliado_ObtenerDatosReniec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAfiliadoPorDNI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/ObtenerAfiliadoPorDNI" message="tns:IAfiliado_ObtenerAfiliadoPorDNI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfiliado/ObtenerAfiliadoPorDNIResponse" message="tns:IAfiliado_ObtenerAfiliadoPorDNI_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAfiliado" type="tns:IAfiliado">
@@ -171,6 +181,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerDatosReniec">
       <soap:operation soapAction="http://tempuri.org/IAfiliado/ObtenerDatosReniec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAfiliadoPorDNI">
+      <soap:operation soapAction="http://tempuri.org/IAfiliado/ObtenerAfiliadoPorDNI" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

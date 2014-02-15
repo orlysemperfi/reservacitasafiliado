@@ -175,6 +175,7 @@ namespace WebReservaCitasAfiliado.WSReservaCita {
     public interface IReservaCitaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/CrearReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/CrearReservaCitaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IReservaCitaService/CrearReservaCitaStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         WebReservaCitasAfiliado.WSReservaCita.ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/CrearReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/CrearReservaCitaResponse")]

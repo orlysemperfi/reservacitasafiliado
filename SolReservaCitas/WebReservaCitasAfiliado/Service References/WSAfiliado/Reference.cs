@@ -284,6 +284,12 @@ namespace WebReservaCitasAfiliado.WSAfiliado {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/ObtenerDatosReniec", ReplyAction="http://tempuri.org/IAfiliado/ObtenerDatosReniecResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> ObtenerDatosReniecAsync(string dni);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/ObtenerAfiliadoPorDNI", ReplyAction="http://tempuri.org/IAfiliado/ObtenerAfiliadoPorDNIResponse")]
+        WebReservaCitasAfiliado.WSAfiliado.Afiliado ObtenerAfiliadoPorDNI(string dni);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAfiliado/ObtenerAfiliadoPorDNI", ReplyAction="http://tempuri.org/IAfiliado/ObtenerAfiliadoPorDNIResponse")]
+        System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSAfiliado.Afiliado> ObtenerAfiliadoPorDNIAsync(string dni);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -375,6 +381,14 @@ namespace WebReservaCitasAfiliado.WSAfiliado {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> ObtenerDatosReniecAsync(string dni) {
             return base.Channel.ObtenerDatosReniecAsync(dni);
+        }
+        
+        public WebReservaCitasAfiliado.WSAfiliado.Afiliado ObtenerAfiliadoPorDNI(string dni) {
+            return base.Channel.ObtenerAfiliadoPorDNI(dni);
+        }
+        
+        public System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSAfiliado.Afiliado> ObtenerAfiliadoPorDNIAsync(string dni) {
+            return base.Channel.ObtenerAfiliadoPorDNIAsync(dni);
         }
     }
 }

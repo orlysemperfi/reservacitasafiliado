@@ -13,6 +13,9 @@
   <wsdl:message name="IReservaCitaService_CrearReservaCita_OutputMessage">
     <wsdl:part name="parameters" element="tns:CrearReservaCitaResponse" />
   </wsdl:message>
+  <wsdl:message name="IReservaCitaService_CrearReservaCita_StringFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q1:string" />
+  </wsdl:message>
   <wsdl:message name="IReservaCitaService_ObtenerReservaCita_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerReservaCita" />
   </wsdl:message>
@@ -41,6 +44,7 @@
     <wsdl:operation name="CrearReservaCita">
       <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/CrearReservaCita" message="tns:IReservaCitaService_CrearReservaCita_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReservaCitaService/CrearReservaCitaResponse" message="tns:IReservaCitaService_CrearReservaCita_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IReservaCitaService/CrearReservaCitaStringFault" name="StringFault" message="tns:IReservaCitaService_CrearReservaCita_StringFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerReservaCita">
       <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/ObtenerReservaCita" message="tns:IReservaCitaService_ObtenerReservaCita_InputMessage" />
@@ -69,6 +73,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ObtenerReservaCita">
       <soap:operation soapAction="http://tempuri.org/IReservaCitaService/ObtenerReservaCita" style="document" />

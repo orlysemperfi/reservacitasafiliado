@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="de17654a-81f5-405d-8b9d-72e3235bbb69" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="faaa00d8-5350-40d5-9357-4c16cfb0cf6a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:5000/Implementacion/ReservaCitaService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ReservaCitaService.disco" MetadataType="Disco" ID="380edf63-a15a-488a-8fdf-14637e35461e" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?disco" />
-    <MetadataFile FileName="ReservaCitaService.xsd" MetadataType="Schema" ID="b68d851d-262b-4085-9baf-affbb42e55f8" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ReservaCitaService.wsdl" MetadataType="Wsdl" ID="bd06a0a9-a4aa-432f-9cdf-3dcf71a0c569" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?wsdl" />
-    <MetadataFile FileName="ReservaCitaService1.xsd" MetadataType="Schema" ID="6dfca5fa-5847-4d4c-a998-db2f258c3b82" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ReservaCitaService2.xsd" MetadataType="Schema" ID="74ca257d-6fa0-42de-9dd9-38d76529fcde" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ReservaCitaService.disco" MetadataType="Disco" ID="62e2dac8-8a7c-4d08-b316-d6923f9c47eb" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?disco" />
+    <MetadataFile FileName="ReservaCitaService.xsd" MetadataType="Schema" ID="5c9f3a97-8df8-4088-a88d-13652bcc02c7" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ReservaCitaService.wsdl" MetadataType="Wsdl" ID="a7b2b05b-f400-4941-bd3b-8d8723d54e4a" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?wsdl" />
+    <MetadataFile FileName="ReservaCitaService1.xsd" MetadataType="Schema" ID="678bd3d8-fd15-4111-9ffd-43bc7c57995b" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ReservaCitaService2.xsd" MetadataType="Schema" ID="617d6185-c498-415a-9b85-6ad1aa99bd58" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
