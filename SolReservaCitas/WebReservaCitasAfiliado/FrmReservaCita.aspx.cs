@@ -21,9 +21,9 @@ namespace WebReservaCitasAfiliado
 
         protected void btnRegistrarReserva_Click(object sender, EventArgs e)
         {
-
-            WSReservaCita.ReservaCitaServiceClient proxyReserva=new WSReservaCita.ReservaCitaServiceClient();
-
+            WSReservaCita.ReservaCitaServiceClient proxyReserva = new WSReservaCita.ReservaCitaServiceClient();
+                
+         
             string dni = txtDNI.Text;
             int idcentro =Convert.ToInt32(cboCentro.SelectedValue);
             int idconsultorio = Convert.ToInt32(cboConsultorio.SelectedValue);
@@ -35,10 +35,12 @@ namespace WebReservaCitasAfiliado
             {
                 WSReservaCita.ReservaCita reserva = proxyReserva.CrearReservaCita(dni, idcentro, idmedico, idconsultorio, (DateTime)fechaAsignada, observacion, estado);
                 LimpiarControles();
-     
+                proxyReserva.Close(); 
+                
             }
             catch (FaultException<string> errormsg)
             {
+                proxyReserva.Abort(); 
                 //Validando si el DNI no existe
                 lblMensaje.Visible = true;
                 lblMensaje.Text = errormsg.Message;
