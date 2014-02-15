@@ -18,8 +18,7 @@ namespace WebReservaCitasAfiliado
             {
                 DateTime today = System.DateTime.Today;
        
-         
-                
+                       
                 txtDesde.Text = String.Format("{0:dd/MM/yyyy}", today);
                 txtHasta.Text = String.Format("{0:dd/MM/yyyy}", today);
             }
@@ -81,6 +80,7 @@ namespace WebReservaCitasAfiliado
                     lblMensaje.Text = errorMessage;
                     lblNombre.Text = string.Empty;
                 }
+                lblMensaje.Text = txtDesde.Text;
                 grdListado.DataBind();
             }
         }
