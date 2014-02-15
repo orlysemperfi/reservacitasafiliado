@@ -5,7 +5,7 @@
                    default-lazy="false">
   <class name="Afiliado" table="Afiliado">
     <id name="IdAfiliado" column="IdAfiliado">
-      <generator class="identity" />
+      <generator class="increment" />
     </id>
     <property name="DNI" column="DNI" />
     <property name="Nombre" column="Nombre" />
