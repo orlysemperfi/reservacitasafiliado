@@ -119,5 +119,11 @@ namespace SOAPServices
                 throw ex;
             }
         }
+
+
+        public Afiliado ObtenerAfiliadoPorDNI(string dni)
+        {
+            return AfiliadoDAO.ObtenerAfiliadoPorDNI(dni);
+        }
     }
 }
