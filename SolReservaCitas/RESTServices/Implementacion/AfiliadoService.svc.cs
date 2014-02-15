@@ -18,7 +18,7 @@ namespace RESTServices.Implementacion
 
         public Afiliado ObtenerAfiliado(string dni)
         {
-            return dao.Obtener( dni);
+            return dao.Obtener(dni);
         }
     }
 }

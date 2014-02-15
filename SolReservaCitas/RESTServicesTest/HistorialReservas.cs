@@ -20,5 +20,7 @@ namespace RESTServicesTest
         public DateTime FechaAsignada { get; set; }
         public string Observacion { get; set; }
         public int Estado { get; set; }
+        public string DNI { get; set; }
+ 
     }
 }

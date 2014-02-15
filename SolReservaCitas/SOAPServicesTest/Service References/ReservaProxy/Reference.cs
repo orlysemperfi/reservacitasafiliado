@@ -23,6 +23,9 @@ namespace SOAPServicesTest.ReservaProxy {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DNIField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -53,6 +56,19 @@ namespace SOAPServicesTest.ReservaProxy {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DNI {
+            get {
+                return this.DNIField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DNIField, value) != true)) {
+                    this.DNIField = value;
+                    this.RaisePropertyChanged("DNI");
+                }
             }
         }
         

@@ -26,6 +26,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTServicesTest", "RESTServicesTest\RESTServicesTest.csproj", "{B716881B-7586-4A84-BD03-EA0728901798}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script", "Script", "{38F71729-57FE-421F-8542-9252D440AEFE}"
+	ProjectSection(SolutionItems) = preProject
+		Script\scriptBD.sql = Script\scriptBD.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True

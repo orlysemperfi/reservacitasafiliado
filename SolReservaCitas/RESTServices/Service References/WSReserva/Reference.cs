@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebReservaCitasAfiliado.WSReservaCita {
+namespace RESTServices.WSReserva {
     using System.Runtime.Serialization;
     using System;
     
@@ -187,27 +187,27 @@ namespace WebReservaCitasAfiliado.WSReservaCita {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSReservaCita.IReservaCitaService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSReserva.IReservaCitaService")]
     public interface IReservaCitaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/CrearReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/CrearReservaCitaResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IReservaCitaService/CrearReservaCitaStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        WebReservaCitasAfiliado.WSReservaCita.ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
+        RESTServices.WSReserva.ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/CrearReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/CrearReservaCitaResponse")]
-        System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita> CrearReservaCitaAsync(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
+        System.Threading.Tasks.Task<RESTServices.WSReserva.ReservaCita> CrearReservaCitaAsync(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/ObtenerReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/ObtenerReservaCitaResponse")]
-        WebReservaCitasAfiliado.WSReservaCita.ReservaCita ObtenerReservaCita(int idReserva);
+        RESTServices.WSReserva.ReservaCita ObtenerReservaCita(int idReserva);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/ObtenerReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/ObtenerReservaCitaResponse")]
-        System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita> ObtenerReservaCitaAsync(int idReserva);
+        System.Threading.Tasks.Task<RESTServices.WSReserva.ReservaCita> ObtenerReservaCitaAsync(int idReserva);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/ModificarReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/ModificarReservaCitaResponse")]
-        WebReservaCitasAfiliado.WSReservaCita.ReservaCita ModificarReservaCita(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
+        RESTServices.WSReserva.ReservaCita ModificarReservaCita(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/ModificarReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/ModificarReservaCitaResponse")]
-        System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita> ModificarReservaCitaAsync(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
+        System.Threading.Tasks.Task<RESTServices.WSReserva.ReservaCita> ModificarReservaCitaAsync(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/EliminarReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/EliminarReservaCitaResponse")]
         void EliminarReservaCita(int idReserva);
@@ -216,19 +216,19 @@ namespace WebReservaCitasAfiliado.WSReservaCita {
         System.Threading.Tasks.Task EliminarReservaCitaAsync(int idReserva);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/ListarReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/ListarReservaCitaResponse")]
-        WebReservaCitasAfiliado.WSReservaCita.ReservaCita[] ListarReservaCita();
+        RESTServices.WSReserva.ReservaCita[] ListarReservaCita();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReservaCitaService/ListarReservaCita", ReplyAction="http://tempuri.org/IReservaCitaService/ListarReservaCitaResponse")]
-        System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita[]> ListarReservaCitaAsync();
+        System.Threading.Tasks.Task<RESTServices.WSReserva.ReservaCita[]> ListarReservaCitaAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IReservaCitaServiceChannel : WebReservaCitasAfiliado.WSReservaCita.IReservaCitaService, System.ServiceModel.IClientChannel {
+    public interface IReservaCitaServiceChannel : RESTServices.WSReserva.IReservaCitaService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ReservaCitaServiceClient : System.ServiceModel.ClientBase<WebReservaCitasAfiliado.WSReservaCita.IReservaCitaService>, WebReservaCitasAfiliado.WSReservaCita.IReservaCitaService {
+    public partial class ReservaCitaServiceClient : System.ServiceModel.ClientBase<RESTServices.WSReserva.IReservaCitaService>, RESTServices.WSReserva.IReservaCitaService {
         
         public ReservaCitaServiceClient() {
         }
@@ -249,27 +249,27 @@ namespace WebReservaCitasAfiliado.WSReservaCita {
                 base(binding, remoteAddress) {
         }
         
-        public WebReservaCitasAfiliado.WSReservaCita.ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado) {
+        public RESTServices.WSReserva.ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado) {
             return base.Channel.CrearReservaCita(dni, idCentro, idMedico, idConsultorio, fechaAsignacion, observacion, estado);
         }
         
-        public System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita> CrearReservaCitaAsync(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado) {
+        public System.Threading.Tasks.Task<RESTServices.WSReserva.ReservaCita> CrearReservaCitaAsync(string dni, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado) {
             return base.Channel.CrearReservaCitaAsync(dni, idCentro, idMedico, idConsultorio, fechaAsignacion, observacion, estado);
         }
         
-        public WebReservaCitasAfiliado.WSReservaCita.ReservaCita ObtenerReservaCita(int idReserva) {
+        public RESTServices.WSReserva.ReservaCita ObtenerReservaCita(int idReserva) {
             return base.Channel.ObtenerReservaCita(idReserva);
         }
         
-        public System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita> ObtenerReservaCitaAsync(int idReserva) {
+        public System.Threading.Tasks.Task<RESTServices.WSReserva.ReservaCita> ObtenerReservaCitaAsync(int idReserva) {
             return base.Channel.ObtenerReservaCitaAsync(idReserva);
         }
         
-        public WebReservaCitasAfiliado.WSReservaCita.ReservaCita ModificarReservaCita(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado) {
+        public RESTServices.WSReserva.ReservaCita ModificarReservaCita(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado) {
             return base.Channel.ModificarReservaCita(idReserva, idAfiliado, idCentro, idMedico, idConsultorio, fechaAsignacion, observacion, estado);
         }
         
-        public System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita> ModificarReservaCitaAsync(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado) {
+        public System.Threading.Tasks.Task<RESTServices.WSReserva.ReservaCita> ModificarReservaCitaAsync(int idReserva, int idAfiliado, int idCentro, int idMedico, int idConsultorio, System.DateTime fechaAsignacion, string observacion, int estado) {
             return base.Channel.ModificarReservaCitaAsync(idReserva, idAfiliado, idCentro, idMedico, idConsultorio, fechaAsignacion, observacion, estado);
         }
         
@@ -281,11 +281,11 @@ namespace WebReservaCitasAfiliado.WSReservaCita {
             return base.Channel.EliminarReservaCitaAsync(idReserva);
         }
         
-        public WebReservaCitasAfiliado.WSReservaCita.ReservaCita[] ListarReservaCita() {
+        public RESTServices.WSReserva.ReservaCita[] ListarReservaCita() {
             return base.Channel.ListarReservaCita();
         }
         
-        public System.Threading.Tasks.Task<WebReservaCitasAfiliado.WSReservaCita.ReservaCita[]> ListarReservaCitaAsync() {
+        public System.Threading.Tasks.Task<RESTServices.WSReserva.ReservaCita[]> ListarReservaCitaAsync() {
             return base.Channel.ListarReservaCitaAsync();
         }
     }

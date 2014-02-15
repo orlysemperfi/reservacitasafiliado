@@ -25,5 +25,7 @@ namespace SOAPServices.Dominio
         public string Observacion { get; set; }
         [DataMember]
         public int Estado { get; set; }
+        [DataMember]
+        public string DNI { get; set; }
     }
 }

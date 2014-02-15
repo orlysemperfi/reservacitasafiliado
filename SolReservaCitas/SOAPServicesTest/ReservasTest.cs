@@ -22,11 +22,9 @@ namespace SOAPServicesTest
                 int idMedico = 1;
                 int idConsultorio = 1;
                 string observacion= "Prueba";
-                DateTime fechaAsignada =Convert.ToDateTime("2013-01-10");
+                DateTime fechaAsignada =Convert.ToDateTime("2013-01-12");
                 int estado = 0;
-
-
-
+                
                 ReservaProxy.ReservaCita res = reservaProxy.CrearReservaCita(dni,idCentro,idMedico,idConsultorio,fechaAsignada,observacion,estado);
 
 

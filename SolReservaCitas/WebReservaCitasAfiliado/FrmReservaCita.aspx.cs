@@ -47,29 +47,7 @@ namespace WebReservaCitasAfiliado
                 lblMensaje.Visible = true;
                 lblMensaje.Text = ex.Message;
 
-                int idafiliado = 123;
 
-
-                //Graba en Cola
-                string rutaCola = @".\private$\Reservas";
-                if (MessageQueue.Exists(rutaCola) == false)
-                    MessageQueue.Create(rutaCola);
-                MessageQueue cola = new MessageQueue(rutaCola);
-                Message mensaje = new Message();
-                mensaje.Label = "Nueva Reserva";
-
-                WSReservaCita.ReservaCita reserva = new WSReservaCita.ReservaCita
-                {
-                    IdAfiliado = idafiliado,
-                    IdCentroAtencion = idcentro,
-                    IdMedico = idmedico,
-                    IdConsultorio = idconsultorio,
-                    Observacion = observacion,
-                    FechaAsignada = fechaAsignada,
-                    Estado = estado
-                };
-                mensaje.Body = reserva;
-                cola.Send(mensaje);
 
             }
            

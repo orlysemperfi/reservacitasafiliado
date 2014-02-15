@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -72,6 +73,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WSReserva\ReservaCitaService.disco" />
+    <None Include="Service References\WSReserva\configuration91.svcinfo" />
+    <None Include="Service References\WSReserva\configuration.svcinfo" />
+    <None Include="Service References\WSReserva\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -89,7 +97,6 @@
     <Compile Include="Implementacion\IHistorialReservasService.cs" />
     <Compile Include="Persistencia\AfiliadoDAO.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
-    <Compile Include="Persistencia\HistorialReserva.cs" />
     <Compile Include="Persistencia\HistorialReservasDAO.cs" />
     <Compile Include="Service References\WSAfiliado\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -97,6 +104,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WSReserva\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -115,6 +127,19 @@
     <Content Include="Service References\WSAfiliado\RESTServices.WSAfiliado.Afiliado.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\WSReserva\ReservaCitaService.wsdl" />
+    <None Include="Service References\WSReserva\ReservaCitaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSReserva\ReservaCitaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSReserva\ReservaCitaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WSReserva\RESTServices.WSReserva.ReservaCita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WSAfiliado\" />
+    <WCFMetadataStorage Include="Service References\WSReserva\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

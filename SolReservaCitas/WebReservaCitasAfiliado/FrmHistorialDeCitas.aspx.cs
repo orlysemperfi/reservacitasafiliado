@@ -40,6 +40,14 @@ namespace WebReservaCitasAfiliado
             grdListado.DataSource = null;
             grdListado.DataBind();
         }
+
+        private void LeerColaReservas()
+        {
+
+
+        }
+
+
      //   protected void btnConsultar_Click(object sender, EventArgs e)
       //  {
                          

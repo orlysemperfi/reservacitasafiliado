@@ -7,6 +7,7 @@ using System.Text;
 using SOAPServices.Persistencia;
 using SOAPServices.Dominio;
 using SOAPServices.Interface;
+using System.Messaging;
 namespace SOAPServices.Implementacion
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "ReservaCitaService" en el código, en svc y en el archivo de configuración a la vez.
@@ -38,29 +39,62 @@ namespace SOAPServices.Implementacion
         }
         public ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio, DateTime fechaAsignada, string observacion, int estado)
         {
-            Afiliado afiliadoABuscar = AfiliadoDAO.ObtenerAfiliadoPorDNI(dni);
-            ReservaCita reservaACrear = null;
-
-            if (afiliadoABuscar == null)
+            ReservaCita reservaCreada = null;
+            try
             {
-                throw new FaultException("Afiliado No está Registrado en el sistema.");
+           
+                    Afiliado afiliadoABuscar = AfiliadoDAO.ObtenerAfiliadoPorDNI(dni);
+                    ReservaCita reservaACrear = null;
+
+                    if (afiliadoABuscar == null)
+                    {
+                        throw new FaultException("Afiliado No está Registrado en el sistema.");
+                    }
+                    else
+                    {
+                        reservaACrear = new ReservaCita()
+                        {
+                        IdAfiliado = afiliadoABuscar.IdAfiliado,
+                        IdCentroAtencion = idCentro,
+                        IdMedico = idMedico,
+                        IdConsultorio = idConsultorio,
+                        Observacion = observacion,
+                        FechaAsignada = fechaAsignada,
+                        Estado = estado
+ 
+                         };
+                    }
+                    reservaCreada = ReservaDAO.Crear(reservaACrear);
             }
-            else
+            catch(Exception)
             {
-                reservaACrear = new ReservaCita()
-            {
-                IdAfiliado = afiliadoABuscar.IdAfiliado,
-                IdCentroAtencion = idCentro,
-                IdMedico = idMedico,
-                IdConsultorio = idConsultorio,
-                Observacion = observacion,
-                FechaAsignada = fechaAsignada,
-                Estado = estado
 
-            };
+                //Graba en Cola
+                string rutaCola = @".\private$\Reservas";
+                if (MessageQueue.Exists(rutaCola) == false)
+                    MessageQueue.Create(rutaCola);
+                MessageQueue cola = new MessageQueue(rutaCola);
+                Message mensaje = new Message();
+                mensaje.Label = "Nueva Reserva";
+
+                reservaCreada = new ReservaCita
+                {
+                    IdAfiliado = 0,
+                    IdCentroAtencion = idCentro,
+                    IdMedico = idMedico,
+                    IdConsultorio = idConsultorio,
+                    Observacion = observacion,
+                    FechaAsignada = fechaAsignada,
+                    Estado = estado,
+                    DNI=dni
+
+                };
+                mensaje.Body = reservaCreada;
+                cola.Send(mensaje);
+
+
             }
-
-            return ReservaDAO.Crear(reservaACrear);
+            return reservaCreada;
         }
 
         public ReservaCita ObtenerReservaCita(int idReserva)

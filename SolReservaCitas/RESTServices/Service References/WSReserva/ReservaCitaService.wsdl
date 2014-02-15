@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReservaCitaService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/ReservaCitaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReservaCitaService_CrearReservaCita_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearReservaCita" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_CrearReservaCita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearReservaCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_CrearReservaCita_StringFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q1:string" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_ObtenerReservaCita_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerReservaCita" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_ObtenerReservaCita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerReservaCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_ModificarReservaCita_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarReservaCita" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_ModificarReservaCita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarReservaCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_EliminarReservaCita_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarReservaCita" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_EliminarReservaCita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarReservaCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_ListarReservaCita_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReservaCita" />
+  </wsdl:message>
+  <wsdl:message name="IReservaCitaService_ListarReservaCita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReservaCitaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReservaCitaService">
+    <wsdl:operation name="CrearReservaCita">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/CrearReservaCita" message="tns:IReservaCitaService_CrearReservaCita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaCitaService/CrearReservaCitaResponse" message="tns:IReservaCitaService_CrearReservaCita_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IReservaCitaService/CrearReservaCitaStringFault" name="StringFault" message="tns:IReservaCitaService_CrearReservaCita_StringFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerReservaCita">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/ObtenerReservaCita" message="tns:IReservaCitaService_ObtenerReservaCita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaCitaService/ObtenerReservaCitaResponse" message="tns:IReservaCitaService_ObtenerReservaCita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarReservaCita">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/ModificarReservaCita" message="tns:IReservaCitaService_ModificarReservaCita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaCitaService/ModificarReservaCitaResponse" message="tns:IReservaCitaService_ModificarReservaCita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarReservaCita">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/EliminarReservaCita" message="tns:IReservaCitaService_EliminarReservaCita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaCitaService/EliminarReservaCitaResponse" message="tns:IReservaCitaService_EliminarReservaCita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarReservaCita">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaCitaService/ListarReservaCita" message="tns:IReservaCitaService_ListarReservaCita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaCitaService/ListarReservaCitaResponse" message="tns:IReservaCitaService_ListarReservaCita_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IReservaCitaService" type="tns:IReservaCitaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearReservaCita">
+      <soap:operation soapAction="http://tempuri.org/IReservaCitaService/CrearReservaCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerReservaCita">
+      <soap:operation soapAction="http://tempuri.org/IReservaCitaService/ObtenerReservaCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarReservaCita">
+      <soap:operation soapAction="http://tempuri.org/IReservaCitaService/ModificarReservaCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarReservaCita">
+      <soap:operation soapAction="http://tempuri.org/IReservaCitaService/EliminarReservaCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarReservaCita">
+      <soap:operation soapAction="http://tempuri.org/IReservaCitaService/ListarReservaCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReservaCitaService">
+    <wsdl:port name="BasicHttpBinding_IReservaCitaService" binding="tns:BasicHttpBinding_IReservaCitaService">
+      <soap:address location="http://localhost:5000/Implementacion/ReservaCitaService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
