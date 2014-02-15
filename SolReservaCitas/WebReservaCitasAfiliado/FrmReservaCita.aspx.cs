@@ -36,7 +36,7 @@ namespace WebReservaCitasAfiliado
                 WSReservaCita.ReservaCita reserva = proxyReserva.CrearReservaCita(dni, idcentro, idmedico, idconsultorio, (DateTime)fechaAsignada, observacion, estado);
                 //Limpio los Controles
                 LimpiarControles();
-               
+     
 
             }
             catch (FaultException<string> ex)
