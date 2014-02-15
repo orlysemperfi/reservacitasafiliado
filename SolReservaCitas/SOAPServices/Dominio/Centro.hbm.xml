@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SOAPServices"
+                   namespace="SOAPServices.Dominio"
+                   default-lazy="false">
+	<class name="Centro" table="CentroAtencion">
+		<id name="IdCentroAtencion" column="IdCentroAtencion">
+			<generator class="identity" />
+		</id>
+		
+		<property name="Descripcion" column="Descripcion" />
+		<property name="Direccion" column="Direccion" />
+
+		<!--<many-to-one name="Sede" column="sede" />-->
+	</class>
+</hibernate-mapping>
+

@@ -3,18 +3,15 @@
                    assembly="SOAPServices"
                    namespace="SOAPServices.Dominio"
                    default-lazy="false">
-	<class name="ReservaCita" table="ReservaCita">
-		<id name="IdReservaCita" column="IdReservaCita">
-			<generator class="increment" />
+	<class name="Consultorio" table="Consultorio">
+		<id name="IdConsultorio" column="IdConsultorio">
 		</id>
-		<property name="IdAfiliado" column="IdAfiliado" />
 		<property name="IdCentroAtencion" column="IdCentroAtencion" />
-		<property name="IdMedico" column="IdMedico" />
-		<property name="IdConsultorio" column="IdConsultorio" />
-		<property name="FechaAsignada" column="FechaAsignada" />
-		<property name="Observacion" column="Observacion" />
+		<property name="NroConsultorio" column="NroConsultorio" />
+		<property name="Descripcion" column="Descripcion" />
 		<property name="Estado" column="Estado" />
 
 		<!--<many-to-one name="Sede" column="sede" />-->
 	</class>
 </hibernate-mapping>
+

@@ -77,17 +77,38 @@
     <EmbeddedResource Include="Dominio\ReservaCita.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dominio\Centro.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Medico.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Consultorio.hbm.xml" />
     <Content Include="Implementacion\AfiliadoService.svc" />
+    <Content Include="Implementacion\CentroService.svc" />
+    <Content Include="Implementacion\ConsultorioService.svc" />
+    <Content Include="Implementacion\MedicoService.svc" />
     <Content Include="Implementacion\ReservaCitaService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dominio\Afiliado.cs" />
+    <Compile Include="Dominio\Centro.cs" />
+    <Compile Include="Dominio\Consultorio.cs" />
     <Compile Include="Dominio\Error.cs" />
+    <Compile Include="Dominio\Medico.cs" />
     <Compile Include="Dominio\ReservaCita.cs" />
     <Compile Include="Implementacion\AfiliadoService.svc.cs">
       <DependentUpon>AfiliadoService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Implementacion\CentroService.svc.cs">
+      <DependentUpon>CentroService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Implementacion\ConsultorioService.svc.cs">
+      <DependentUpon>ConsultorioService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\IConsultorioService.cs" />
+    <Compile Include="Interface\IMedicoService.cs" />
+    <Compile Include="Implementacion\MedicoService.svc.cs">
+      <DependentUpon>MedicoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ICentroService.cs" />
     <Compile Include="Interface\IReservaCitaService.cs" />
     <Compile Include="Implementacion\ReservaCitaService.svc.cs">
       <DependentUpon>ReservaCitaService.svc</DependentUpon>
@@ -95,7 +116,10 @@
     <Compile Include="Interface\IAfiliado.cs" />
     <Compile Include="Persistencia\AfiliadoDAO.cs" />
     <Compile Include="Persistencia\BaseDAO.cs" />
+    <Compile Include="Persistencia\CentroDAO.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
+    <Compile Include="Persistencia\ConsultorioDAO.cs" />
+    <Compile Include="Persistencia\MedicoDAO.cs" />
     <Compile Include="Persistencia\NHibernateHelper.cs" />
     <Compile Include="Persistencia\ReservaCitaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
