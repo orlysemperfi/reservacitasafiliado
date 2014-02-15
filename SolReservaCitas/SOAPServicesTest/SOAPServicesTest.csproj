@@ -61,7 +61,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Error.cs" />
+    <Compile Include="ReservasTest.cs" />
     <Compile Include="Service References\AfiliadoProxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReservaProxy\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -91,9 +97,23 @@
     <None Include="Service References\AfiliadoProxy\SOAPServicesTest.AfiliadoProxy.Afiliado.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ReservaProxy\ReservaCitaService.wsdl" />
+    <None Include="Service References\ReservaProxy\ReservaCitaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReservaProxy\ReservaCitaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReservaProxy\ReservaCitaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReservaProxy\SOAPServicesTest.ReservaProxy.ReservaCita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AfiliadoProxy\" />
+    <WCFMetadataStorage Include="Service References\ReservaProxy\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AfiliadoProxy\AfiliadoService.disco" />
@@ -106,6 +126,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AfiliadoProxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReservaProxy\ReservaCitaService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReservaProxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReservaProxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReservaProxy\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
