@@ -18,7 +18,7 @@ namespace RESTServices.Implementacion
         private HistorialReservasDAO dao = new HistorialReservasDAO();
         private AfiliadoDAO dao1 = new AfiliadoDAO();
         
-        public List<HistorialReservas> ListarHistorial(string dni)
+        public List<HistorialReservas> ListarHistorial(string dni,string desde,string hasta)
         {
              Afiliado afiliadoBuscado = dao1.Obtener(dni);
              List<HistorialReservas> Lista = null;
@@ -30,7 +30,7 @@ namespace RESTServices.Implementacion
              }
              else
              {
-                 Lista = dao.ListarTodos(dni);
+                 Lista = dao.ListarTodos(dni,desde,hasta);
                  ICollection<HistorialReservas> modelo = Lista;
 
                  if (modelo.Count == 0)

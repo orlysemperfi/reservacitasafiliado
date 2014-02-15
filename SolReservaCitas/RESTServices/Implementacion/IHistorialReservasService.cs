@@ -14,7 +14,7 @@ namespace RESTServices.Implementacion
     public interface IHistorialReservasService
     {
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "Historias/{dni}", ResponseFormat = WebMessageFormat.Json)]
-        List<HistorialReservas> ListarHistorial(string dni);
+        [WebInvoke(Method = "GET", UriTemplate = "Historias/{dni}/{desde}/{hasta}", ResponseFormat = WebMessageFormat.Json)]
+        List<HistorialReservas> ListarHistorial(string dni,string desde, string hasta);
     }
 }

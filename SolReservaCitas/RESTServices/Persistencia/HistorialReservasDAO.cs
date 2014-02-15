@@ -11,8 +11,8 @@ namespace RESTServices.Persistencia
 {
     public class HistorialReservasDAO
     {
-        public List<HistorialReservas> ListarTodos(string dni)
-        {
+        public List<HistorialReservas> ListarTodos(string dni,string desde,string hasta)
+        {   
             List<HistorialReservas> Listado = new List<HistorialReservas>();
             string sql = "select r.IdReservaCita,r.IdAfiliado,(a.Nombre+' ' +a.APaterno) as NombreAfiliado, "+
             "r.IdCentroAtencion,ca.Descripcion as DescripcionCentro,"+
@@ -23,14 +23,15 @@ namespace RESTServices.Persistencia
             "left outer join CentroAtencion ca on ca.IdCentroAtencion=r.IdCentroAtencion "+ 
             "left outer join Medico m on m.IdMedico=r.IdMedico "+
             "left outer join Consultorio c on c.IdCentroAtencion=r.IdCentroAtencion and c.IdConsultorio=r.IdConsultorio"+
-            " where a.DNI=@dni ";
+            " where a.DNI=@dni and FechaAsignada BETWEEN @desde and @hasta ";
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))
             {
                 con.Open();
                 using (SqlCommand com = new SqlCommand(sql, con))
                 {
                     com.Parameters.Add(new SqlParameter("@dni", dni));
-
+                    com.Parameters.Add(new SqlParameter("@desde", desde));
+                    com.Parameters.Add(new SqlParameter("@hasta", hasta));
                     using (SqlDataReader resultado = com.ExecuteReader())
                     {
                         while (resultado.Read())
