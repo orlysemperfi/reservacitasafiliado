@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConsultorioService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/ConsultorioService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/ConsultorioService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/ConsultorioService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConsultorioService_CrearConsultorio_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearConsultorio" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_CrearConsultorio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearConsultorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_ObtenerConsultorio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerConsultorio" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_ObtenerConsultorio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerConsultorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_ModificarConsultorio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarConsultorio" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_ModificarConsultorio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarConsultorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_EliminarConsultorio_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarConsultorio" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_EliminarConsultorio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarConsultorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_ListarConsultorios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarConsultorios" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_ListarConsultorios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarConsultoriosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_ListarPorCentro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorCentro" />
+  </wsdl:message>
+  <wsdl:message name="IConsultorioService_ListarPorCentro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorCentroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IConsultorioService">
+    <wsdl:operation name="CrearConsultorio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultorioService/CrearConsultorio" message="tns:IConsultorioService_CrearConsultorio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultorioService/CrearConsultorioResponse" message="tns:IConsultorioService_CrearConsultorio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsultorio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultorioService/ObtenerConsultorio" message="tns:IConsultorioService_ObtenerConsultorio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultorioService/ObtenerConsultorioResponse" message="tns:IConsultorioService_ObtenerConsultorio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarConsultorio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultorioService/ModificarConsultorio" message="tns:IConsultorioService_ModificarConsultorio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultorioService/ModificarConsultorioResponse" message="tns:IConsultorioService_ModificarConsultorio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConsultorio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultorioService/EliminarConsultorio" message="tns:IConsultorioService_EliminarConsultorio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultorioService/EliminarConsultorioResponse" message="tns:IConsultorioService_EliminarConsultorio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarConsultorios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultorioService/ListarConsultorios" message="tns:IConsultorioService_ListarConsultorios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultorioService/ListarConsultoriosResponse" message="tns:IConsultorioService_ListarConsultorios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorCentro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultorioService/ListarPorCentro" message="tns:IConsultorioService_ListarPorCentro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultorioService/ListarPorCentroResponse" message="tns:IConsultorioService_ListarPorCentro_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IConsultorioService" type="tns:IConsultorioService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearConsultorio">
+      <soap:operation soapAction="http://tempuri.org/IConsultorioService/CrearConsultorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsultorio">
+      <soap:operation soapAction="http://tempuri.org/IConsultorioService/ObtenerConsultorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarConsultorio">
+      <soap:operation soapAction="http://tempuri.org/IConsultorioService/ModificarConsultorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConsultorio">
+      <soap:operation soapAction="http://tempuri.org/IConsultorioService/EliminarConsultorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarConsultorios">
+      <soap:operation soapAction="http://tempuri.org/IConsultorioService/ListarConsultorios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorCentro">
+      <soap:operation soapAction="http://tempuri.org/IConsultorioService/ListarPorCentro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultorioService">
+    <wsdl:port name="BasicHttpBinding_IConsultorioService" binding="tns:BasicHttpBinding_IConsultorioService">
+      <soap:address location="http://localhost:5000/Implementacion/ConsultorioService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

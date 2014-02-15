@@ -4,8 +4,7 @@
   <xs:element name="CrearReservaCita">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
-        <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idCentro" type="xs:int" />
         <xs:element minOccurs="0" name="idMedico" type="xs:int" />
         <xs:element minOccurs="0" name="idConsultorio" type="xs:int" />

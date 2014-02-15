@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="52c809cb-40ef-4a93-9d4d-59d68ff75920" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:5000/Implementacion/CentroService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CentroService.xsd" MetadataType="Schema" ID="e97c9ae4-7d74-44b6-b61a-0e568c843b84" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/CentroService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CentroService1.xsd" MetadataType="Schema" ID="3d8f40f9-d822-48c0-beae-7fccd9405355" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/CentroService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CentroService.disco" MetadataType="Disco" ID="fb6e608a-2ddb-45bb-b894-6f28f9c6b7ac" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/CentroService.svc?disco" />
+    <MetadataFile FileName="CentroService2.xsd" MetadataType="Schema" ID="c8ec0f13-02f3-4980-a1b9-669695cf01a2" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/CentroService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CentroService.wsdl" MetadataType="Wsdl" ID="78adce2b-0083-45de-9111-63dfcd640ca8" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/CentroService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

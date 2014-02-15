@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CentroService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/CentroService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/CentroService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/CentroService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICentroService_CrearCentro_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCentro" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_CrearCentro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCentroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_ObtenerCentro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCentro" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_ObtenerCentro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCentroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_ModificarCentro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarCentro" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_ModificarCentro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarCentroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_EliminarCentro_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCentro" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_EliminarCentro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCentroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_ListarCentros_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCentros" />
+  </wsdl:message>
+  <wsdl:message name="ICentroService_ListarCentros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCentrosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICentroService">
+    <wsdl:operation name="CrearCentro">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroService/CrearCentro" message="tns:ICentroService_CrearCentro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroService/CrearCentroResponse" message="tns:ICentroService_CrearCentro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCentro">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroService/ObtenerCentro" message="tns:ICentroService_ObtenerCentro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroService/ObtenerCentroResponse" message="tns:ICentroService_ObtenerCentro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarCentro">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroService/ModificarCentro" message="tns:ICentroService_ModificarCentro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroService/ModificarCentroResponse" message="tns:ICentroService_ModificarCentro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCentro">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroService/EliminarCentro" message="tns:ICentroService_EliminarCentro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroService/EliminarCentroResponse" message="tns:ICentroService_EliminarCentro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCentros">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroService/ListarCentros" message="tns:ICentroService_ListarCentros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroService/ListarCentrosResponse" message="tns:ICentroService_ListarCentros_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICentroService" type="tns:ICentroService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearCentro">
+      <soap:operation soapAction="http://tempuri.org/ICentroService/CrearCentro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCentro">
+      <soap:operation soapAction="http://tempuri.org/ICentroService/ObtenerCentro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarCentro">
+      <soap:operation soapAction="http://tempuri.org/ICentroService/ModificarCentro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCentro">
+      <soap:operation soapAction="http://tempuri.org/ICentroService/EliminarCentro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCentros">
+      <soap:operation soapAction="http://tempuri.org/ICentroService/ListarCentros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CentroService">
+    <wsdl:port name="BasicHttpBinding_ICentroService" binding="tns:BasicHttpBinding_ICentroService">
+      <soap:address location="http://localhost:5000/Implementacion/CentroService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

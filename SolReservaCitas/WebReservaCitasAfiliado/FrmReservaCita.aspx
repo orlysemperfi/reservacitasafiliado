@@ -60,7 +60,7 @@
                 <asp:Label ID="Label2" runat="server" style="font-weight: 700" Text="Centro de Salud"></asp:Label>
             </td>
             <td colspan="3">
-                <asp:DropDownList ID="cboCentro" runat="server" AutoPostBack="True">
+                <asp:DropDownList ID="cboCentro" runat="server" AutoPostBack="True" OnSelectedIndexChanged="cboCentro_SelectedIndexChanged">
                     <asp:ListItem Value="0">Seleccione Un Centro</asp:ListItem>
                 </asp:DropDownList>
             </td>

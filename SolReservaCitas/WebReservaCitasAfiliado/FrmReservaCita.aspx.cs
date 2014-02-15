@@ -71,5 +71,12 @@ namespace WebReservaCitasAfiliado
             lblMensaje.Visible = false;
         }
 
+        protected void cboCentro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            CargarComboConsultorio();
+         
+        }
+
     }
 }

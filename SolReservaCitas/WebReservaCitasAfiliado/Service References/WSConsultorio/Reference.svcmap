@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9de9cc62-4948-4a3b-abd7-c58a14faff13" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:5000/Implementacion/ConsultorioService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ConsultorioService.xsd" MetadataType="Schema" ID="55426de5-32db-420c-ae6a-6050a477d4f0" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ConsultorioService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ConsultorioService.wsdl" MetadataType="Wsdl" ID="8ba43fb8-42f0-41d1-9c8b-394412bac7c9" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ConsultorioService.svc?wsdl" />
+    <MetadataFile FileName="ConsultorioService1.xsd" MetadataType="Schema" ID="222b6f61-4429-468a-8b89-db151a8d0199" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ConsultorioService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ConsultorioService.disco" MetadataType="Disco" ID="b5b14f85-6d24-4d5d-9fa4-965b1212f457" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ConsultorioService.svc?disco" />
+    <MetadataFile FileName="ConsultorioService2.xsd" MetadataType="Schema" ID="472cc3dd-af85-4afc-9e43-7775bfbcfa30" SourceId="1" SourceUrl="http://localhost:5000/Implementacion/ConsultorioService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -248,10 +248,70 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WSCentro\CentroService.wsdl" />
+    <None Include="Service References\WSCentro\CentroService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSCentro\CentroService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSCentro\CentroService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WSCentro\WebReservaCitasAfiliado.WSCentro.Centro.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSConsultorio\ConsultorioService.wsdl" />
+    <None Include="Service References\WSConsultorio\ConsultorioService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSConsultorio\ConsultorioService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSConsultorio\ConsultorioService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WSConsultorio\WebReservaCitasAfiliado.WSConsultorio.Consultorio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSMedico\MedicoService.wsdl" />
+    <None Include="Service References\WSMedico\MedicoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSMedico\MedicoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSMedico\MedicoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WSConsultorio\ConsultorioService.disco" />
+    <Content Include="Service References\WSConsultorio\configuration91.svcinfo" />
+    <Content Include="Service References\WSConsultorio\configuration.svcinfo" />
+    <Content Include="Service References\WSConsultorio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\WSMedico\WebReservaCitasAfiliado.WSMedico.Medico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSReservaCita\ReservaCitaService.disco" />
     <None Include="Service References\WSReservaCita\configuration91.svcinfo" />
     <None Include="Service References\WSReservaCita\configuration.svcinfo" />
     <None Include="Service References\WSReservaCita\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSCentro\CentroService.disco" />
+    <None Include="Service References\WSCentro\configuration91.svcinfo" />
+    <None Include="Service References\WSCentro\configuration.svcinfo" />
+    <None Include="Service References\WSCentro\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSMedico\MedicoService.disco" />
+    <None Include="Service References\WSMedico\configuration91.svcinfo" />
+    <None Include="Service References\WSMedico\configuration.svcinfo" />
+    <None Include="Service References\WSMedico\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -348,6 +408,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\WSCentro\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSConsultorio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSMedico\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WSReservaCita\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -407,6 +482,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WSAfiliado\" />
+    <WCFMetadataStorage Include="Service References\WSCentro\" />
+    <WCFMetadataStorage Include="Service References\WSConsultorio\" />
+    <WCFMetadataStorage Include="Service References\WSMedico\" />
     <WCFMetadataStorage Include="Service References\WSReservaCita\" />
   </ItemGroup>
   <PropertyGroup>
