@@ -39,11 +39,11 @@ namespace WebReservaCitasAfiliado
                
 
             }
-            catch (FaultException<Error> ex)
+            catch (FaultException<string> ex)
             {
                 //Validando si el DNI no existe
                 lblMensaje.Visible = true;
-                lblMensaje.Text = ex.Detail.MensajeNegocio;
+                lblMensaje.Text = ex.Message;
 
             }
         }
