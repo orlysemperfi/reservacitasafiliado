@@ -35,6 +35,8 @@ namespace WebReservaCitasAfiliado
             {
                 WSReservaCita.ReservaCita reserva = proxyReserva.CrearReservaCita(dni, idcentro, idmedico, idconsultorio, (DateTime)fechaAsignada, observacion, estado);
                 LimpiarControles();
+                lblMensaje.Text = "Se registro Reserva Nro: " + reserva.IdReservaCita; 
+
                 
             }
             catch(FaultException ex)
