@@ -38,7 +38,7 @@ namespace SOAPServices.Implementacion
         }
         public ReservaCita CrearReservaCita(string dni, int idCentro, int idMedico, int idConsultorio, DateTime fechaAsignada, string observacion, int estado)
         {
-            Afiliado afiliadoABuscar = afiliadoDAO.ObtenerAfiliadoPorDNI(DNI);
+            Afiliado afiliadoABuscar = AfiliadoDAO.ObtenerAfiliadoPorDNI(dni);
            
             if (afiliadoABuscar==null)
             {
