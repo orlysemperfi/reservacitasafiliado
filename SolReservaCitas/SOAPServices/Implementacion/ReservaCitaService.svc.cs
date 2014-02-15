@@ -43,7 +43,7 @@ namespace SOAPServices.Implementacion
 
             if (afiliadoABuscar == null)
             {
-                throw new FaultException("Afiliado No esta Registrado.");
+                throw new FaultException("Afiliado No esta Registrado en el sistema.");
             }
             else
             {
