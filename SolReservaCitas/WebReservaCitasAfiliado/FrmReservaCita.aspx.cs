@@ -35,15 +35,12 @@ namespace WebReservaCitasAfiliado
             {
                 WSReservaCita.ReservaCita reserva = proxyReserva.CrearReservaCita(dni, idcentro, idmedico, idconsultorio, (DateTime)fechaAsignada, observacion, estado);
                 LimpiarControles();
-                proxyReserva.Close(); 
                 
             }
-            catch (FaultException<string> errormsg)
+            catch(FaultException ex)
             {
-                proxyReserva.Abort(); 
-                //Validando si el DNI no existe
                 lblMensaje.Visible = true;
-                lblMensaje.Text = errormsg.Message;
+                lblMensaje.Text = ex.Message;
 
             }
            
