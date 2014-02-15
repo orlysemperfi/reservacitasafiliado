@@ -51,7 +51,8 @@ namespace WebReservaCitasAfiliado
       //  }
         protected void btnListar_Click(object sender, EventArgs e)
         {
-            if (!txtDNI.Text.Equals(string.Empty))
+            if (!txtDNI.Text.Equals(string.Empty) && !txtDesde.Text.Equals(string.Empty) &&
+                !txtHasta.Text.Equals(string.Empty))
             {
                 HttpWebRequest req2 = (HttpWebRequest)WebRequest.Create("http://localhost:5001/Implementacion/HistorialReservasService.svc/Historias/" + txtDNI.Text);
                 req2.Method = "GET";
@@ -80,8 +81,15 @@ namespace WebReservaCitasAfiliado
                     lblMensaje.Text = errorMessage;
                     lblNombre.Text = string.Empty;
                 }
-                lblMensaje.Text = txtDesde.Text;
+
                 grdListado.DataBind();
+            }
+            else
+            {
+                grdListado.DataSource = null;
+                lblMensaje.Text = "Ingrese Un DNI y Un rango de Fechas a Consultar";
+                grdListado.DataBind();
+                
             }
         }
 

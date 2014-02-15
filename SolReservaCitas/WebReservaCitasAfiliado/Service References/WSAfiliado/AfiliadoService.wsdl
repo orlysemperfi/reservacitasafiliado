@@ -3,8 +3,9 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" />
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5000/Implementacion/AfiliadoService.svc?xsd=xsd3" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAfiliado_CrearAfiliado_InputMessage">
@@ -12,6 +13,9 @@
   </wsdl:message>
   <wsdl:message name="IAfiliado_CrearAfiliado_OutputMessage">
     <wsdl:part name="parameters" element="tns:CrearAfiliadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfiliado_CrearAfiliado_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" name="detail" element="q1:Error" />
   </wsdl:message>
   <wsdl:message name="IAfiliado_ObtenerAfiliado_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerAfiliado" />
@@ -43,10 +47,26 @@
   <wsdl:message name="IAfiliado_ValidarDNIExistente_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidarDNIExistenteResponse" />
   </wsdl:message>
+  <wsdl:message name="IAfiliado_ValidarDNIExistenteReniec_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarDNIExistenteReniec" />
+  </wsdl:message>
+  <wsdl:message name="IAfiliado_ValidarDNIExistenteReniec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarDNIExistenteReniecResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfiliado_ValidarDNIExistenteReniec_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SOAPServices.Dominio" name="detail" element="q2:Error" />
+  </wsdl:message>
+  <wsdl:message name="IAfiliado_ObtenerDatosReniec_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosReniec" />
+  </wsdl:message>
+  <wsdl:message name="IAfiliado_ObtenerDatosReniec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosReniecResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAfiliado">
     <wsdl:operation name="CrearAfiliado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/CrearAfiliado" message="tns:IAfiliado_CrearAfiliado_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAfiliado/CrearAfiliadoResponse" message="tns:IAfiliado_CrearAfiliado_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAfiliado/CrearAfiliadoErrorFault" name="ErrorFault" message="tns:IAfiliado_CrearAfiliado_ErrorFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerAfiliado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/ObtenerAfiliado" message="tns:IAfiliado_ObtenerAfiliado_InputMessage" />
@@ -68,6 +88,15 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/ValidarDNIExistente" message="tns:IAfiliado_ValidarDNIExistente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAfiliado/ValidarDNIExistenteResponse" message="tns:IAfiliado_ValidarDNIExistente_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ValidarDNIExistenteReniec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniec" message="tns:IAfiliado_ValidarDNIExistenteReniec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniecResponse" message="tns:IAfiliado_ValidarDNIExistenteReniec_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniecErrorFault" name="ErrorFault" message="tns:IAfiliado_ValidarDNIExistenteReniec_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosReniec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfiliado/ObtenerDatosReniec" message="tns:IAfiliado_ObtenerDatosReniec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfiliado/ObtenerDatosReniecResponse" message="tns:IAfiliado_ObtenerDatosReniec_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAfiliado" type="tns:IAfiliado">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -79,6 +108,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ObtenerAfiliado">
       <soap:operation soapAction="http://tempuri.org/IAfiliado/ObtenerAfiliado" style="document" />
@@ -118,6 +150,27 @@
     </wsdl:operation>
     <wsdl:operation name="ValidarDNIExistente">
       <soap:operation soapAction="http://tempuri.org/IAfiliado/ValidarDNIExistente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDNIExistenteReniec">
+      <soap:operation soapAction="http://tempuri.org/IAfiliado/ValidarDNIExistenteReniec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosReniec">
+      <soap:operation soapAction="http://tempuri.org/IAfiliado/ObtenerDatosReniec" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
