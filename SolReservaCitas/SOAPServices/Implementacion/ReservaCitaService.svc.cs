@@ -42,8 +42,7 @@ namespace SOAPServices.Implementacion
            
             if (afiliadoABuscar==null)
             {
-                Error error = new Error { CodigoNegocio = "E01", MensajeNegocio = "Afiliado No esta Registrado." };
-                throw new FaultException<Error>(error);
+                throw new FaultException("Afiliado No esta Registrado.");
             }
 
             ReservaCita reservaACrear = new ReservaCita()
