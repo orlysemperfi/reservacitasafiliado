@@ -377,6 +377,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Error.cs" />
     <Compile Include="FrmHistorialDeCitas.aspx.cs">
       <DependentUpon>FrmHistorialDeCitas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
