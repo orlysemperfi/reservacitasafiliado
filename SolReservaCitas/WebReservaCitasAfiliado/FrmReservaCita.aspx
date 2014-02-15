@@ -48,27 +48,20 @@
                 <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
             </td>
             <td class="auto-style3">
-                <asp:Button ID="btnBuscarAfiliado" runat="server" Text="Buscar Afiliado" />
-            </td>
+                &nbsp;</td>
             <td class="auto-style8">
                 &nbsp;</td>
             <td class="auto-style3"></td>
             <td class="auto-style3"></td>
         </tr>
-        <tr>
-            <td class="auto-style6"></td>
-            <td colspan="3" class="auto-style2">
-                <asp:Label ID="lblMensaje" runat="server" style="font-weight: 700; color: #CC0000" Visible="False"></asp:Label>
-            </td>
-            <td class="auto-style2"></td>
-            <td class="auto-style2"></td>
-        </tr>
+     
         <tr>
             <td class="auto-style5">
                 <asp:Label ID="Label2" runat="server" style="font-weight: 700" Text="Centro de Salud"></asp:Label>
             </td>
             <td colspan="3">
-                <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:DropDownList ID="cboCentro" runat="server" AutoPostBack="True">
+                    <asp:ListItem Value="0">Seleccione Un Centro</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td>&nbsp;</td>
@@ -79,7 +72,7 @@
                 <asp:Label ID="Label3" runat="server" style="font-weight: 700" Text="Consultorio"></asp:Label>
             </td>
             <td colspan="3">
-                <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:DropDownList ID="cboConsultorio" runat="server">
                 </asp:DropDownList>
             </td>
             <td>&nbsp;</td>
@@ -87,57 +80,57 @@
         </tr>
         <tr>
             <td class="auto-style6">
-                <asp:Label ID="Label4" runat="server" style="font-weight: 700" Text="Especialidad"></asp:Label>
+                <asp:Label ID="Label4" runat="server" style="font-weight: 700" Text="Medico"></asp:Label>
             </td>
             <td class="auto-style2" colspan="3">
-                <asp:DropDownList ID="DropDownList3" runat="server">
+                <asp:DropDownList ID="cboMedico" runat="server">
                 </asp:DropDownList>
             </td>
             <td class="auto-style2"></td>
             <td class="auto-style2"></td>
-        </tr>
-        <tr>
-            <td class="auto-style5">
-                <asp:Label ID="Label5" runat="server" style="font-weight: 700" Text="Fecha Deseada"></asp:Label>
-            </td>
         </tr>
         <tr>
             <td class="auto-style6">
                 <asp:Label ID="Label6" runat="server" style="font-weight: 700" Text="Día"></asp:Label>
             </td>
-            <td colspan="3">
-                <asp:DropDownList ID="DropDownList4" runat="server">
-                    <asp:ListItem>Cualquier día</asp:ListItem>
-                    <asp:ListItem>Lunes a Viernes</asp:ListItem>
-                    <asp:ListItem>Sabado</asp:ListItem>
-                </asp:DropDownList>
+            <td colspan="3" class="auto-style2">
+                <asp:TextBox ID="txtFecha" runat="server" TextMode="Date"></asp:TextBox>
             </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style6">
-                <asp:Label ID="Label7" runat="server" style="font-weight: 700" Text="Turno"></asp:Label>
-            </td>
-            <td colspan="3">
-                <asp:DropDownList ID="DropDownList5" runat="server">
-                    <asp:ListItem>Cualquier turno</asp:ListItem>
-                    <asp:ListItem>Mañanas</asp:ListItem>
-                    <asp:ListItem>Tardes</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style2"></td>
+            <td class="auto-style2"></td>
         </tr>
         <tr>
             <td class="auto-style6">
                 <asp:Label ID="Label8" runat="server" style="font-weight: 700" Text="Descripción del malestar físico"></asp:Label>
             </td>
-            <td colspan="3">
-                <asp:TextBox ID="TextBox1" runat="server" Height="95px" Width="276px"></asp:TextBox>
+            <td colspan="3" class="auto-style2">
+                <asp:TextBox ID="txtObservacion" runat="server" Height="95px" Width="276px" TextMode="MultiLine"></asp:TextBox>
             </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style2"></td>
+            <td class="auto-style2"></td>
+        </tr>
+        <tr>
+            <td class="auto-style6">
+                &nbsp;</td>
+            <td colspan="3" class="auto-style2">
+                &nbsp;</td>
+            <td class="auto-style2">&nbsp;</td>
+            <td class="auto-style2">&nbsp;</td>
+        </tr>
+           <tr>
+            <td class="auto-style6"></td>
+            <td colspan="3" class="auto-style2">
+                <asp:Label ID="lblMensaje" runat="server" style="font-weight: 700; color: #CC0000" Visible="False"></asp:Label>
+            </td>
+            <td class="auto-style2"></td>
+            <td class="auto-style2"></td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <asp:Button ID="btnRegistrarReserva" runat="server" Text="Registrar Reserva" OnClick="btnRegistrarReserva_Click" />
+                <asp:Button ID="BtnActualizarReserva" runat="server" Text="Actualizar Reserva" OnClick="BtnActualizarReserva_Click" />
+                <asp:Button ID="btnCancelarRegistro" runat="server" Text="Limpiar Controles" OnClick="btnCancelarRegistro_Click" />
+            </td>
         </tr>
     </Table>
 </asp:Content>
