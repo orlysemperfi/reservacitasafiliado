@@ -44,6 +44,9 @@ namespace SOAPServices.Interface
         [OperationContract]
         DataSet ObtenerDatosReniec(string dni);
 
+        [OperationContract]
+        Afiliado ObtenerAfiliadoPorDNI(string dni);
+
     }
 
 }
