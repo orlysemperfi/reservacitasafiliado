@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebReservaCitasAfiliado.WSAfiliado;
 
 namespace WebReservaCitasAfiliado
 {
@@ -28,17 +29,17 @@ namespace WebReservaCitasAfiliado
             int idconsultorio = Convert.ToInt32(cboConsultorio.SelectedValue);
             int idmedico = Convert.ToInt32(cboMedico.SelectedValue);
             string observacion = txtObservacion.Text;
-            DateTime fechaAsignada = txtFecha.Text;
+            DateTime fechaAsignada =Convert.ToDateTime(txtFecha.Text);
             int estado = 0;          
             try
             {
-                WSReservaCita.ReservaCita reserva = proxyReserva.CrearReservaCita(dni, idcentro, idmedico, idconsultorio, fechaAsignada, observacion, estado);
+                WSReservaCita.ReservaCita reserva = proxyReserva.CrearReservaCita(dni, idcentro, idmedico, idconsultorio, (DateTime)fechaAsignada, observacion, estado);
                 //Limpio los Controles
                 LimpiarControles();
                
 
             }
-            catch (FaultException<WSReservaCita.Error> ex)
+            catch (FaultException<Error> ex)
             {
                 //Validando si el DNI no existe
                 lblMensaje.Visible = true;
